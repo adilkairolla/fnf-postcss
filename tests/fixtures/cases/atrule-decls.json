@@ -1,0 +1,256 @@
+{
+  "raws": {
+    "semicolon": false,
+    "after": ""
+  },
+  "type": "root",
+  "nodes": [
+    {
+      "raws": {
+        "before": "",
+        "between": " ",
+        "afterName": " ",
+        "semicolon": false,
+        "after": "\n"
+      },
+      "type": "atrule",
+      "name": "page",
+      "source": {
+        "end": {
+          "column": 1,
+          "line": 3,
+          "offset": 37
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0
+        }
+      },
+      "params": ":left",
+      "nodes": [
+        {
+          "raws": {
+            "before": "\n    ",
+            "between": ": "
+          },
+          "type": "decl",
+          "source": {
+            "end": {
+              "column": 21,
+              "line": 2,
+              "offset": 35
+            },
+            "start": {
+              "column": 5,
+              "line": 2,
+              "offset": 18
+            }
+          },
+          "prop": "background",
+          "value": "black"
+        }
+      ]
+    },
+    {
+      "raws": {
+        "before": "\n\n",
+        "between": " ",
+        "afterName": "",
+        "semicolon": false,
+        "after": "\n"
+      },
+      "type": "atrule",
+      "name": "media",
+      "source": {
+        "end": {
+          "column": 1,
+          "line": 7,
+          "offset": 85
+        },
+        "start": {
+          "column": 1,
+          "line": 5,
+          "offset": 39
+        }
+      },
+      "params": "(min-width: 0)",
+      "nodes": [
+        {
+          "raws": {
+            "before": "\n    ",
+            "between": ": "
+          },
+          "type": "decl",
+          "source": {
+            "end": {
+              "column": 21,
+              "line": 6,
+              "offset": 83
+            },
+            "start": {
+              "column": 5,
+              "line": 6,
+              "offset": 66
+            }
+          },
+          "prop": "background",
+          "value": "white"
+        }
+      ]
+    },
+    {
+      "raws": {
+        "before": "\n\n",
+        "between": " ",
+        "afterName": "",
+        "semicolon": true,
+        "after": "\n"
+      },
+      "type": "atrule",
+      "name": "font-face",
+      "source": {
+        "end": {
+          "column": 1,
+          "line": 11,
+          "offset": 130
+        },
+        "start": {
+          "column": 1,
+          "line": 9,
+          "offset": 87
+        }
+      },
+      "params": "",
+      "nodes": [
+        {
+          "raws": {
+            "before": "\n    ",
+            "between": ": "
+          },
+          "type": "decl",
+          "source": {
+            "end": {
+              "column": 28,
+              "line": 10,
+              "offset": 128
+            },
+            "start": {
+              "column": 5,
+              "line": 10,
+              "offset": 104
+            }
+          },
+          "prop": "family-name",
+          "value": "\"A;' /**/\""
+        }
+      ]
+    },
+    {
+      "raws": {
+        "before": "\n\n",
+        "between": " ",
+        "afterName": "",
+        "semicolon": true,
+        "after": "\n"
+      },
+      "type": "atrule",
+      "name": "viewport",
+      "source": {
+        "end": {
+          "column": 1,
+          "line": 15,
+          "offset": 163
+        },
+        "start": {
+          "column": 1,
+          "line": 13,
+          "offset": 132
+        }
+      },
+      "params": "",
+      "nodes": [
+        {
+          "raws": {
+            "before": "\n    ",
+            "between": ": "
+          },
+          "type": "decl",
+          "source": {
+            "end": {
+              "column": 17,
+              "line": 14,
+              "offset": 161
+            },
+            "start": {
+              "column": 5,
+              "line": 14,
+              "offset": 148
+            }
+          },
+          "prop": "width",
+          "value": "110px"
+        }
+      ]
+    },
+    {
+      "raws": {
+        "before": "\n\n",
+        "between": " ",
+        "afterName": "",
+        "semicolon": true,
+        "after": "\n"
+      },
+      "type": "atrule",
+      "name": "-ms-viewport",
+      "source": {
+        "end": {
+          "column": 1,
+          "line": 19,
+          "offset": 200
+        },
+        "start": {
+          "column": 1,
+          "line": 17,
+          "offset": 165
+        }
+      },
+      "params": "",
+      "nodes": [
+        {
+          "raws": {
+            "before": "\n    ",
+            "between": ": "
+          },
+          "type": "decl",
+          "source": {
+            "end": {
+              "column": 17,
+              "line": 18,
+              "offset": 198
+            },
+            "start": {
+              "column": 5,
+              "line": 18,
+              "offset": 185
+            }
+          },
+          "prop": "width",
+          "value": "100px"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "end": {
+      "column": 2,
+      "line": 19,
+      "offset": 200
+    },
+    "start": {
+      "column": 1,
+      "line": 1,
+      "offset": 0
+    }
+  }
+}

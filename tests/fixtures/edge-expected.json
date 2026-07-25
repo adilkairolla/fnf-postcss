@@ -1,0 +1,4888 @@
+{
+  "at-rule-empty-params.css": {
+    "ast": {
+      "raws": {
+        "semicolon": false,
+        "after": "\n"
+      },
+      "type": "root",
+      "nodes": [
+        {
+          "raws": {
+            "before": "",
+            "between": "",
+            "afterName": "",
+            "after": ""
+          },
+          "type": "atrule",
+          "name": "font-face",
+          "source": {
+            "end": {
+              "column": 12,
+              "line": 1,
+              "offset": 12
+            },
+            "start": {
+              "column": 1,
+              "line": 1,
+              "offset": 0
+            }
+          },
+          "params": "",
+          "nodes": []
+        },
+        {
+          "raws": {
+            "before": "\n",
+            "between": " ",
+            "afterName": "",
+            "after": ""
+          },
+          "type": "atrule",
+          "name": "media",
+          "source": {
+            "end": {
+              "column": 9,
+              "line": 2,
+              "offset": 22
+            },
+            "start": {
+              "column": 1,
+              "line": 2,
+              "offset": 13
+            }
+          },
+          "params": "",
+          "nodes": []
+        }
+      ],
+      "source": {
+        "end": {
+          "column": 1,
+          "line": 3,
+          "offset": 23
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0
+        }
+      }
+    },
+    "css": "@font-face{}\n@media {}\n"
+  },
+  "at-rule-nested-braces.css": {
+    "ast": {
+      "raws": {
+        "semicolon": false,
+        "after": "\n"
+      },
+      "type": "root",
+      "nodes": [
+        {
+          "raws": {
+            "before": "",
+            "between": " ",
+            "afterName": " ",
+            "semicolon": false,
+            "after": " "
+          },
+          "type": "atrule",
+          "name": "media",
+          "source": {
+            "end": {
+              "column": 51,
+              "line": 1,
+              "offset": 51
+            },
+            "start": {
+              "column": 1,
+              "line": 1,
+              "offset": 0
+            }
+          },
+          "params": "screen",
+          "nodes": [
+            {
+              "raws": {
+                "before": " ",
+                "between": " ",
+                "afterName": " ",
+                "semicolon": false,
+                "after": " "
+              },
+              "type": "atrule",
+              "name": "media",
+              "source": {
+                "end": {
+                  "column": 49,
+                  "line": 1,
+                  "offset": 49
+                },
+                "start": {
+                  "column": 17,
+                  "line": 1,
+                  "offset": 16
+                }
+              },
+              "params": "print",
+              "nodes": [
+                {
+                  "raws": {
+                    "before": " ",
+                    "between": " ",
+                    "semicolon": false,
+                    "after": " "
+                  },
+                  "type": "rule",
+                  "nodes": [
+                    {
+                      "raws": {
+                        "before": " ",
+                        "between": ": "
+                      },
+                      "type": "decl",
+                      "source": {
+                        "end": {
+                          "column": 45,
+                          "line": 1,
+                          "offset": 45
+                        },
+                        "start": {
+                          "column": 36,
+                          "line": 1,
+                          "offset": 35
+                        }
+                      },
+                      "prop": "color",
+                      "value": "red"
+                    }
+                  ],
+                  "source": {
+                    "end": {
+                      "column": 47,
+                      "line": 1,
+                      "offset": 47
+                    },
+                    "start": {
+                      "column": 32,
+                      "line": 1,
+                      "offset": 31
+                    }
+                  },
+                  "selector": "a"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "source": {
+        "end": {
+          "column": 1,
+          "line": 2,
+          "offset": 52
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0
+        }
+      }
+    },
+    "css": "@media screen { @media print { a { color: red } } }\n"
+  },
+  "at-rule-no-semicolon.css": {
+    "ast": {
+      "raws": {
+        "semicolon": false,
+        "after": "\n"
+      },
+      "type": "root",
+      "nodes": [
+        {
+          "raws": {
+            "before": "",
+            "between": "",
+            "afterName": " "
+          },
+          "type": "atrule",
+          "name": "charset",
+          "source": {
+            "end": {
+              "column": 16,
+              "line": 1,
+              "offset": 16
+            },
+            "start": {
+              "column": 1,
+              "line": 1,
+              "offset": 0
+            }
+          },
+          "params": "\"utf-8\""
+        }
+      ],
+      "source": {
+        "end": {
+          "column": 1,
+          "line": 2,
+          "offset": 17
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0
+        }
+      }
+    },
+    "css": "@charset \"utf-8\"\n"
+  },
+  "at-rule-no-space.css": {
+    "ast": {
+      "raws": {
+        "semicolon": false,
+        "after": "\n"
+      },
+      "type": "root",
+      "nodes": [
+        {
+          "raws": {
+            "before": "",
+            "between": "",
+            "afterName": "",
+            "semicolon": false,
+            "after": ""
+          },
+          "type": "atrule",
+          "name": "media",
+          "source": {
+            "end": {
+              "column": 28,
+              "line": 1,
+              "offset": 28
+            },
+            "start": {
+              "column": 1,
+              "line": 1,
+              "offset": 0
+            }
+          },
+          "params": "(min-width:100px)",
+          "nodes": [
+            {
+              "raws": {
+                "before": "",
+                "between": "",
+                "after": ""
+              },
+              "type": "rule",
+              "nodes": [],
+              "source": {
+                "end": {
+                  "column": 27,
+                  "line": 1,
+                  "offset": 27
+                },
+                "start": {
+                  "column": 25,
+                  "line": 1,
+                  "offset": 24
+                }
+              },
+              "selector": "a"
+            }
+          ]
+        }
+      ],
+      "source": {
+        "end": {
+          "column": 1,
+          "line": 2,
+          "offset": 29
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0
+        }
+      }
+    },
+    "css": "@media(min-width:100px){a{}}\n"
+  },
+  "at-rules.css": {
+    "ast": {
+      "raws": {
+        "semicolon": false,
+        "after": "\n"
+      },
+      "type": "root",
+      "nodes": [
+        {
+          "raws": {
+            "before": "",
+            "between": "",
+            "afterName": " "
+          },
+          "type": "atrule",
+          "name": "charset",
+          "source": {
+            "end": {
+              "column": 17,
+              "line": 1,
+              "offset": 17
+            },
+            "start": {
+              "column": 1,
+              "line": 1,
+              "offset": 0
+            }
+          },
+          "params": "\"utf-8\""
+        },
+        {
+          "raws": {
+            "before": "\n",
+            "between": "",
+            "afterName": " "
+          },
+          "type": "atrule",
+          "name": "import",
+          "source": {
+            "end": {
+              "column": 26,
+              "line": 2,
+              "offset": 44
+            },
+            "start": {
+              "column": 1,
+              "line": 2,
+              "offset": 18
+            }
+          },
+          "params": "url(a.css) screen"
+        },
+        {
+          "raws": {
+            "before": "\n",
+            "between": "",
+            "afterName": " "
+          },
+          "type": "atrule",
+          "name": "namespace",
+          "source": {
+            "end": {
+              "column": 47,
+              "line": 3,
+              "offset": 92
+            },
+            "start": {
+              "column": 1,
+              "line": 3,
+              "offset": 45
+            }
+          },
+          "params": "svg url(http://www.w3.org/2000/svg)"
+        },
+        {
+          "raws": {
+            "before": "\n",
+            "between": " ",
+            "afterName": " ",
+            "semicolon": false,
+            "after": " "
+          },
+          "type": "atrule",
+          "name": "media",
+          "source": {
+            "end": {
+              "column": 55,
+              "line": 4,
+              "offset": 148
+            },
+            "start": {
+              "column": 1,
+              "line": 4,
+              "offset": 93
+            }
+          },
+          "params": "(min-width:100px) and (max-width:200px)",
+          "nodes": [
+            {
+              "raws": {
+                "before": " ",
+                "between": " ",
+                "after": ""
+              },
+              "type": "rule",
+              "nodes": [],
+              "source": {
+                "end": {
+                  "column": 53,
+                  "line": 4,
+                  "offset": 146
+                },
+                "start": {
+                  "column": 50,
+                  "line": 4,
+                  "offset": 142
+                }
+              },
+              "selector": "a"
+            }
+          ]
+        },
+        {
+          "raws": {
+            "before": "\n",
+            "between": " ",
+            "afterName": " ",
+            "semicolon": false,
+            "after": " "
+          },
+          "type": "atrule",
+          "name": "supports",
+          "source": {
+            "end": {
+              "column": 51,
+              "line": 5,
+              "offset": 200
+            },
+            "start": {
+              "column": 1,
+              "line": 5,
+              "offset": 149
+            }
+          },
+          "params": "(display:grid) or (display:flex)",
+          "nodes": [
+            {
+              "raws": {
+                "before": " ",
+                "between": " ",
+                "after": ""
+              },
+              "type": "rule",
+              "nodes": [],
+              "source": {
+                "end": {
+                  "column": 49,
+                  "line": 5,
+                  "offset": 198
+                },
+                "start": {
+                  "column": 46,
+                  "line": 5,
+                  "offset": 194
+                }
+              },
+              "selector": "a"
+            }
+          ]
+        },
+        {
+          "raws": {
+            "before": "\n",
+            "between": " ",
+            "afterName": " ",
+            "semicolon": false,
+            "after": " "
+          },
+          "type": "atrule",
+          "name": "page",
+          "source": {
+            "end": {
+              "column": 28,
+              "line": 6,
+              "offset": 229
+            },
+            "start": {
+              "column": 1,
+              "line": 6,
+              "offset": 201
+            }
+          },
+          "params": ":first",
+          "nodes": [
+            {
+              "raws": {
+                "before": " ",
+                "between": ": "
+              },
+              "type": "decl",
+              "source": {
+                "end": {
+                  "column": 26,
+                  "line": 6,
+                  "offset": 227
+                },
+                "start": {
+                  "column": 16,
+                  "line": 6,
+                  "offset": 216
+                }
+              },
+              "prop": "margin",
+              "value": "1in"
+            }
+          ]
+        },
+        {
+          "raws": {
+            "before": "\n",
+            "between": "",
+            "afterName": " "
+          },
+          "type": "atrule",
+          "name": "layer",
+          "source": {
+            "end": {
+              "column": 24,
+              "line": 7,
+              "offset": 254
+            },
+            "start": {
+              "column": 1,
+              "line": 7,
+              "offset": 230
+            }
+          },
+          "params": "base, components"
+        },
+        {
+          "raws": {
+            "before": "\n",
+            "between": " ",
+            "afterName": " ",
+            "semicolon": false,
+            "after": " "
+          },
+          "type": "atrule",
+          "name": "layer",
+          "source": {
+            "end": {
+              "column": 20,
+              "line": 8,
+              "offset": 275
+            },
+            "start": {
+              "column": 1,
+              "line": 8,
+              "offset": 255
+            }
+          },
+          "params": "base",
+          "nodes": [
+            {
+              "raws": {
+                "before": " ",
+                "between": " ",
+                "after": ""
+              },
+              "type": "rule",
+              "nodes": [],
+              "source": {
+                "end": {
+                  "column": 18,
+                  "line": 8,
+                  "offset": 273
+                },
+                "start": {
+                  "column": 15,
+                  "line": 8,
+                  "offset": 269
+                }
+              },
+              "selector": "a"
+            }
+          ]
+        },
+        {
+          "raws": {
+            "before": "\n",
+            "between": " ",
+            "afterName": " ",
+            "semicolon": false,
+            "after": " "
+          },
+          "type": "atrule",
+          "name": "container",
+          "source": {
+            "end": {
+              "column": 43,
+              "line": 9,
+              "offset": 319
+            },
+            "start": {
+              "column": 1,
+              "line": 9,
+              "offset": 276
+            }
+          },
+          "params": "card (min-width: 100px)",
+          "nodes": [
+            {
+              "raws": {
+                "before": " ",
+                "between": " ",
+                "after": ""
+              },
+              "type": "rule",
+              "nodes": [],
+              "source": {
+                "end": {
+                  "column": 41,
+                  "line": 9,
+                  "offset": 317
+                },
+                "start": {
+                  "column": 38,
+                  "line": 9,
+                  "offset": 313
+                }
+              },
+              "selector": "a"
+            }
+          ]
+        },
+        {
+          "raws": {
+            "before": "\n",
+            "between": " ",
+            "afterName": " ",
+            "semicolon": false,
+            "after": " "
+          },
+          "type": "atrule",
+          "name": "keyframes",
+          "source": {
+            "end": {
+              "column": 50,
+              "line": 10,
+              "offset": 370
+            },
+            "start": {
+              "column": 1,
+              "line": 10,
+              "offset": 320
+            }
+          },
+          "params": "x",
+          "nodes": [
+            {
+              "raws": {
+                "before": " ",
+                "between": " ",
+                "semicolon": false,
+                "after": " "
+              },
+              "type": "rule",
+              "nodes": [
+                {
+                  "raws": {
+                    "before": " ",
+                    "between": ": "
+                  },
+                  "type": "decl",
+                  "source": {
+                    "end": {
+                      "column": 28,
+                      "line": 10,
+                      "offset": 348
+                    },
+                    "start": {
+                      "column": 23,
+                      "line": 10,
+                      "offset": 342
+                    }
+                  },
+                  "prop": "top",
+                  "value": "0"
+                }
+              ],
+              "source": {
+                "end": {
+                  "column": 30,
+                  "line": 10,
+                  "offset": 350
+                },
+                "start": {
+                  "column": 16,
+                  "line": 10,
+                  "offset": 335
+                }
+              },
+              "selector": "from"
+            },
+            {
+              "raws": {
+                "before": " ",
+                "between": " ",
+                "semicolon": false,
+                "after": " "
+              },
+              "type": "rule",
+              "nodes": [
+                {
+                  "raws": {
+                    "before": " ",
+                    "between": ": "
+                  },
+                  "type": "decl",
+                  "source": {
+                    "end": {
+                      "column": 46,
+                      "line": 10,
+                      "offset": 366
+                    },
+                    "start": {
+                      "column": 39,
+                      "line": 10,
+                      "offset": 358
+                    }
+                  },
+                  "prop": "top",
+                  "value": "1px"
+                }
+              ],
+              "source": {
+                "end": {
+                  "column": 48,
+                  "line": 10,
+                  "offset": 368
+                },
+                "start": {
+                  "column": 32,
+                  "line": 10,
+                  "offset": 351
+                }
+              },
+              "selector": "100%"
+            }
+          ]
+        }
+      ],
+      "source": {
+        "end": {
+          "column": 1,
+          "line": 11,
+          "offset": 371
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0
+        }
+      }
+    },
+    "css": "@charset \"utf-8\";\n@import url(a.css) screen;\n@namespace svg url(http://www.w3.org/2000/svg);\n@media (min-width:100px) and (max-width:200px) { a {} }\n@supports (display:grid) or (display:flex) { a {} }\n@page :first { margin: 1in }\n@layer base, components;\n@layer base { a {} }\n@container card (min-width: 100px) { a {} }\n@keyframes x { from { top: 0 } 100% { top: 1px } }\n"
+  },
+  "attribute-selectors.css": {
+    "ast": {
+      "raws": {
+        "semicolon": false,
+        "after": "\n"
+      },
+      "type": "root",
+      "nodes": [
+        {
+          "raws": {
+            "before": "",
+            "between": " ",
+            "after": ""
+          },
+          "type": "rule",
+          "nodes": [],
+          "source": {
+            "end": {
+              "column": 10,
+              "line": 1,
+              "offset": 10
+            },
+            "start": {
+              "column": 1,
+              "line": 1,
+              "offset": 0
+            }
+          },
+          "selector": "a[href]"
+        },
+        {
+          "raws": {
+            "before": "\n",
+            "between": " ",
+            "after": ""
+          },
+          "type": "rule",
+          "nodes": [],
+          "source": {
+            "end": {
+              "column": 14,
+              "line": 2,
+              "offset": 25
+            },
+            "start": {
+              "column": 1,
+              "line": 2,
+              "offset": 11
+            }
+          },
+          "selector": "a[href=\"x\"]"
+        },
+        {
+          "raws": {
+            "before": "\n",
+            "between": " ",
+            "after": ""
+          },
+          "type": "rule",
+          "nodes": [],
+          "source": {
+            "end": {
+              "column": 16,
+              "line": 3,
+              "offset": 42
+            },
+            "start": {
+              "column": 1,
+              "line": 3,
+              "offset": 26
+            }
+          },
+          "selector": "a[href='x' i]"
+        },
+        {
+          "raws": {
+            "before": "\n",
+            "between": " ",
+            "after": ""
+          },
+          "type": "rule",
+          "nodes": [],
+          "source": {
+            "end": {
+              "column": 17,
+              "line": 4,
+              "offset": 60
+            },
+            "start": {
+              "column": 1,
+              "line": 4,
+              "offset": 43
+            }
+          },
+          "selector": "a[href~=\"x{}\"]"
+        },
+        {
+          "raws": {
+            "before": "\n",
+            "between": " ",
+            "after": ""
+          },
+          "type": "rule",
+          "nodes": [],
+          "source": {
+            "end": {
+              "column": 16,
+              "line": 5,
+              "offset": 77
+            },
+            "start": {
+              "column": 1,
+              "line": 5,
+              "offset": 61
+            }
+          },
+          "selector": "a[data-a=\"]\"]"
+        }
+      ],
+      "source": {
+        "end": {
+          "column": 1,
+          "line": 6,
+          "offset": 78
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0
+        }
+      }
+    },
+    "css": "a[href] {}\na[href=\"x\"] {}\na[href='x' i] {}\na[href~=\"x{}\"] {}\na[data-a=\"]\"] {}\n"
+  },
+  "colon-in-selector.css": {
+    "ast": {
+      "raws": {
+        "semicolon": false,
+        "after": "\n"
+      },
+      "type": "root",
+      "nodes": [
+        {
+          "raws": {
+            "before": "",
+            "between": " ",
+            "semicolon": false,
+            "after": " "
+          },
+          "type": "rule",
+          "nodes": [
+            {
+              "raws": {
+                "before": " ",
+                "between": ": "
+              },
+              "type": "decl",
+              "source": {
+                "end": {
+                  "column": 52,
+                  "line": 1,
+                  "offset": 52
+                },
+                "start": {
+                  "column": 43,
+                  "line": 1,
+                  "offset": 42
+                }
+              },
+              "prop": "color",
+              "value": "red"
+            }
+          ],
+          "source": {
+            "end": {
+              "column": 54,
+              "line": 1,
+              "offset": 54
+            },
+            "start": {
+              "column": 1,
+              "line": 1,
+              "offset": 0
+            }
+          },
+          "selector": "a:hover, a::before, a:not(:first-child)"
+        }
+      ],
+      "source": {
+        "end": {
+          "column": 1,
+          "line": 2,
+          "offset": 55
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0
+        }
+      }
+    },
+    "css": "a:hover, a::before, a:not(:first-child) { color: red }\n"
+  },
+  "comment-in-selector.css": {
+    "ast": {
+      "raws": {
+        "semicolon": false,
+        "after": "\n"
+      },
+      "type": "root",
+      "nodes": [
+        {
+          "raws": {
+            "before": "",
+            "between": " ",
+            "semicolon": false,
+            "after": " "
+          },
+          "type": "rule",
+          "nodes": [
+            {
+              "raws": {
+                "before": " ",
+                "between": ": "
+              },
+              "type": "decl",
+              "source": {
+                "end": {
+                  "column": 38,
+                  "line": 1,
+                  "offset": 38
+                },
+                "start": {
+                  "column": 15,
+                  "line": 1,
+                  "offset": 14
+                }
+              },
+              "prop": "color",
+              "value": "var/**/(--broken)"
+            }
+          ],
+          "source": {
+            "end": {
+              "column": 40,
+              "line": 1,
+              "offset": 40
+            },
+            "start": {
+              "column": 1,
+              "line": 1,
+              "offset": 0
+            }
+          },
+          "selector": ".in/**/side"
+        }
+      ],
+      "source": {
+        "end": {
+          "column": 1,
+          "line": 2,
+          "offset": 41
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0
+        }
+      }
+    },
+    "css": ".in/**/side { color: var/**/(--broken) }\n"
+  },
+  "comments-everywhere.css": {
+    "ast": {
+      "raws": {
+        "semicolon": false,
+        "after": "\n"
+      },
+      "type": "root",
+      "nodes": [
+        {
+          "raws": {
+            "before": "",
+            "left": "",
+            "right": ""
+          },
+          "type": "comment",
+          "source": {
+            "end": {
+              "column": 5,
+              "line": 1,
+              "offset": 5
+            },
+            "start": {
+              "column": 1,
+              "line": 1,
+              "offset": 0
+            }
+          },
+          "text": "a"
+        },
+        {
+          "raws": {
+            "before": " ",
+            "left": "",
+            "right": ""
+          },
+          "type": "comment",
+          "source": {
+            "end": {
+              "column": 11,
+              "line": 1,
+              "offset": 11
+            },
+            "start": {
+              "column": 7,
+              "line": 1,
+              "offset": 6
+            }
+          },
+          "text": "b"
+        },
+        {
+          "raws": {
+            "before": "\n",
+            "between": "/*e*/ ",
+            "selector": {
+              "raw": "a/*c*/,/*d*/b",
+              "value": "a/*c*/,b"
+            },
+            "semicolon": true,
+            "after": "\n"
+          },
+          "type": "rule",
+          "nodes": [
+            {
+              "raws": {
+                "before": "",
+                "left": "",
+                "right": ""
+              },
+              "type": "comment",
+              "source": {
+                "end": {
+                  "column": 25,
+                  "line": 2,
+                  "offset": 37
+                },
+                "start": {
+                  "column": 21,
+                  "line": 2,
+                  "offset": 32
+                }
+              },
+              "text": "f"
+            },
+            {
+              "raws": {
+                "before": "\n  ",
+                "left": "",
+                "right": ""
+              },
+              "type": "comment",
+              "source": {
+                "end": {
+                  "column": 7,
+                  "line": 3,
+                  "offset": 45
+                },
+                "start": {
+                  "column": 3,
+                  "line": 3,
+                  "offset": 40
+                }
+              },
+              "text": "g"
+            },
+            {
+              "raws": {
+                "before": "",
+                "between": "/*h*/:/*i*/",
+                "value": {
+                  "raw": "red/*j*/",
+                  "value": "red"
+                }
+              },
+              "type": "decl",
+              "source": {
+                "end": {
+                  "column": 32,
+                  "line": 3,
+                  "offset": 70
+                },
+                "start": {
+                  "column": 8,
+                  "line": 3,
+                  "offset": 45
+                }
+              },
+              "prop": "color",
+              "value": "red"
+            },
+            {
+              "raws": {
+                "before": "",
+                "left": "",
+                "right": ""
+              },
+              "type": "comment",
+              "source": {
+                "end": {
+                  "column": 37,
+                  "line": 3,
+                  "offset": 75
+                },
+                "start": {
+                  "column": 33,
+                  "line": 3,
+                  "offset": 70
+                }
+              },
+              "text": "k"
+            }
+          ],
+          "source": {
+            "end": {
+              "column": 1,
+              "line": 4,
+              "offset": 77
+            },
+            "start": {
+              "column": 1,
+              "line": 2,
+              "offset": 12
+            }
+          },
+          "selector": "a/*c*/,b"
+        },
+        {
+          "raws": {
+            "before": "",
+            "left": "",
+            "right": ""
+          },
+          "type": "comment",
+          "source": {
+            "end": {
+              "column": 6,
+              "line": 4,
+              "offset": 82
+            },
+            "start": {
+              "column": 2,
+              "line": 4,
+              "offset": 77
+            }
+          },
+          "text": "l"
+        }
+      ],
+      "source": {
+        "end": {
+          "column": 1,
+          "line": 5,
+          "offset": 83
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0
+        }
+      }
+    },
+    "css": "/*a*/ /*b*/\na/*c*/,/*d*/b/*e*/ {/*f*/\n  /*g*/color/*h*/:/*i*/red/*j*/;/*k*/\n}/*l*/\n"
+  },
+  "crlf.css": {
+    "ast": {
+      "raws": {
+        "semicolon": false,
+        "after": "\r\n"
+      },
+      "type": "root",
+      "nodes": [
+        {
+          "raws": {
+            "before": "",
+            "between": " ",
+            "semicolon": true,
+            "after": "\r\n"
+          },
+          "type": "rule",
+          "nodes": [
+            {
+              "raws": {
+                "before": "\r\n  ",
+                "between": ": "
+              },
+              "type": "decl",
+              "source": {
+                "end": {
+                  "column": 13,
+                  "line": 2,
+                  "offset": 18
+                },
+                "start": {
+                  "column": 3,
+                  "line": 2,
+                  "offset": 7
+                }
+              },
+              "prop": "color",
+              "value": "red"
+            }
+          ],
+          "source": {
+            "end": {
+              "column": 1,
+              "line": 3,
+              "offset": 21
+            },
+            "start": {
+              "column": 1,
+              "line": 1,
+              "offset": 0
+            }
+          },
+          "selector": "a"
+        }
+      ],
+      "source": {
+        "end": {
+          "column": 1,
+          "line": 4,
+          "offset": 23
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0
+        }
+      }
+    },
+    "css": "a {\r\n  color: red;\r\n}\r\n"
+  },
+  "custom-props-fallback.css": {
+    "ast": {
+      "raws": {
+        "semicolon": false,
+        "after": "\n"
+      },
+      "type": "root",
+      "nodes": [
+        {
+          "raws": {
+            "before": "",
+            "between": " ",
+            "semicolon": false,
+            "after": " "
+          },
+          "type": "rule",
+          "nodes": [
+            {
+              "raws": {
+                "before": " ",
+                "between": ": "
+              },
+              "type": "decl",
+              "source": {
+                "end": {
+                  "column": 34,
+                  "line": 1,
+                  "offset": 34
+                },
+                "start": {
+                  "column": 5,
+                  "line": 1,
+                  "offset": 4
+                }
+              },
+              "prop": "color",
+              "value": "var(--x, var(--y, red))"
+            }
+          ],
+          "source": {
+            "end": {
+              "column": 36,
+              "line": 1,
+              "offset": 36
+            },
+            "start": {
+              "column": 1,
+              "line": 1,
+              "offset": 0
+            }
+          },
+          "selector": "a"
+        }
+      ],
+      "source": {
+        "end": {
+          "column": 1,
+          "line": 2,
+          "offset": 37
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0
+        }
+      }
+    },
+    "css": "a { color: var(--x, var(--y, red)) }\n"
+  },
+  "custom-props.css": {
+    "error": {
+      "reason": "Unknown word b",
+      "line": 5,
+      "column": 13,
+      "endLine": 5,
+      "endColumn": 14
+    }
+  },
+  "deep-nesting.css": {
+    "ast": {
+      "raws": {
+        "semicolon": false,
+        "after": "\n"
+      },
+      "type": "root",
+      "nodes": [
+        {
+          "raws": {
+            "before": "",
+            "between": " ",
+            "afterName": " ",
+            "semicolon": false,
+            "after": " "
+          },
+          "type": "atrule",
+          "name": "media",
+          "source": {
+            "end": {
+              "column": 62,
+              "line": 1,
+              "offset": 62
+            },
+            "start": {
+              "column": 1,
+              "line": 1,
+              "offset": 0
+            }
+          },
+          "params": "a",
+          "nodes": [
+            {
+              "raws": {
+                "before": " ",
+                "between": " ",
+                "afterName": " ",
+                "semicolon": false,
+                "after": " "
+              },
+              "type": "atrule",
+              "name": "media",
+              "source": {
+                "end": {
+                  "column": 60,
+                  "line": 1,
+                  "offset": 60
+                },
+                "start": {
+                  "column": 12,
+                  "line": 1,
+                  "offset": 11
+                }
+              },
+              "params": "b",
+              "nodes": [
+                {
+                  "raws": {
+                    "before": " ",
+                    "between": " ",
+                    "afterName": " ",
+                    "semicolon": false,
+                    "after": " "
+                  },
+                  "type": "atrule",
+                  "name": "media",
+                  "source": {
+                    "end": {
+                      "column": 58,
+                      "line": 1,
+                      "offset": 58
+                    },
+                    "start": {
+                      "column": 23,
+                      "line": 1,
+                      "offset": 22
+                    }
+                  },
+                  "params": "c",
+                  "nodes": [
+                    {
+                      "raws": {
+                        "before": " ",
+                        "between": " ",
+                        "afterName": " ",
+                        "semicolon": false,
+                        "after": " "
+                      },
+                      "type": "atrule",
+                      "name": "media",
+                      "source": {
+                        "end": {
+                          "column": 56,
+                          "line": 1,
+                          "offset": 56
+                        },
+                        "start": {
+                          "column": 34,
+                          "line": 1,
+                          "offset": 33
+                        }
+                      },
+                      "params": "d",
+                      "nodes": [
+                        {
+                          "raws": {
+                            "before": " ",
+                            "between": " ",
+                            "semicolon": false,
+                            "after": " "
+                          },
+                          "type": "rule",
+                          "nodes": [
+                            {
+                              "raws": {
+                                "before": " ",
+                                "between": ": "
+                              },
+                              "type": "decl",
+                              "source": {
+                                "end": {
+                                  "column": 52,
+                                  "line": 1,
+                                  "offset": 52
+                                },
+                                "start": {
+                                  "column": 49,
+                                  "line": 1,
+                                  "offset": 48
+                                }
+                              },
+                              "prop": "b",
+                              "value": "c"
+                            }
+                          ],
+                          "source": {
+                            "end": {
+                              "column": 54,
+                              "line": 1,
+                              "offset": 54
+                            },
+                            "start": {
+                              "column": 45,
+                              "line": 1,
+                              "offset": 44
+                            }
+                          },
+                          "selector": "a"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "source": {
+        "end": {
+          "column": 1,
+          "line": 2,
+          "offset": 63
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0
+        }
+      }
+    },
+    "css": "@media a { @media b { @media c { @media d { a { b: c } } } } }\n"
+  },
+  "empty-comment.css": {
+    "ast": {
+      "raws": {
+        "semicolon": false,
+        "after": "\n"
+      },
+      "type": "root",
+      "nodes": [
+        {
+          "raws": {
+            "before": "",
+            "left": "",
+            "right": ""
+          },
+          "type": "comment",
+          "source": {
+            "end": {
+              "column": 4,
+              "line": 1,
+              "offset": 4
+            },
+            "start": {
+              "column": 1,
+              "line": 1,
+              "offset": 0
+            }
+          },
+          "text": ""
+        },
+        {
+          "raws": {
+            "before": "\n",
+            "left": " ",
+            "right": ""
+          },
+          "type": "comment",
+          "source": {
+            "end": {
+              "column": 5,
+              "line": 2,
+              "offset": 10
+            },
+            "start": {
+              "column": 1,
+              "line": 2,
+              "offset": 5
+            }
+          },
+          "text": ""
+        },
+        {
+          "raws": {
+            "before": "\n",
+            "left": "\n",
+            "right": ""
+          },
+          "type": "comment",
+          "source": {
+            "end": {
+              "column": 2,
+              "line": 4,
+              "offset": 16
+            },
+            "start": {
+              "column": 1,
+              "line": 3,
+              "offset": 11
+            }
+          },
+          "text": ""
+        },
+        {
+          "raws": {
+            "before": "\n",
+            "between": "",
+            "after": ""
+          },
+          "type": "rule",
+          "nodes": [],
+          "source": {
+            "end": {
+              "column": 3,
+              "line": 5,
+              "offset": 20
+            },
+            "start": {
+              "column": 1,
+              "line": 5,
+              "offset": 17
+            }
+          },
+          "selector": "a"
+        }
+      ],
+      "source": {
+        "end": {
+          "column": 1,
+          "line": 6,
+          "offset": 21
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0
+        }
+      }
+    },
+    "css": "/**/\n/* */\n/*\n*/\na{}\n"
+  },
+  "empty.css": {
+    "ast": {
+      "raws": {
+        "after": ""
+      },
+      "type": "root",
+      "nodes": [],
+      "source": {
+        "end": {
+          "column": 1,
+          "line": 1,
+          "offset": 0
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0
+        }
+      }
+    },
+    "css": ""
+  },
+  "err-at-rule-no-name.css": {
+    "error": {
+      "reason": "At-rule without name",
+      "line": 1,
+      "column": 1,
+      "endLine": 1,
+      "endColumn": 2
+    }
+  },
+  "err-colon-in-value.css": {
+    "error": {
+      "reason": "Missed semicolon",
+      "line": 1,
+      "column": 20,
+      "endLine": null,
+      "endColumn": null
+    }
+  },
+  "err-double-colon.css": {
+    "ast": {
+      "raws": {
+        "semicolon": false,
+        "after": "\n"
+      },
+      "type": "root",
+      "nodes": [
+        {
+          "raws": {
+            "before": "",
+            "between": " ",
+            "semicolon": false,
+            "after": " "
+          },
+          "type": "rule",
+          "nodes": [
+            {
+              "raws": {
+                "before": " : ",
+                "between": ""
+              },
+              "type": "decl",
+              "source": {
+                "end": {
+                  "column": 9,
+                  "line": 1,
+                  "offset": 9
+                },
+                "start": {
+                  "column": 7,
+                  "line": 1,
+                  "offset": 6
+                }
+              },
+              "prop": "red",
+              "value": ""
+            }
+          ],
+          "source": {
+            "end": {
+              "column": 11,
+              "line": 1,
+              "offset": 11
+            },
+            "start": {
+              "column": 1,
+              "line": 1,
+              "offset": 0
+            }
+          },
+          "selector": "a"
+        }
+      ],
+      "source": {
+        "end": {
+          "column": 1,
+          "line": 2,
+          "offset": 12
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0
+        }
+      }
+    },
+    "css": "a { : red }\n"
+  },
+  "err-empty-selector-brace.css": {
+    "ast": {
+      "raws": {
+        "semicolon": false,
+        "after": "\n"
+      },
+      "type": "root",
+      "nodes": [
+        {
+          "raws": {
+            "before": "",
+            "between": "",
+            "semicolon": false,
+            "after": " "
+          },
+          "type": "rule",
+          "nodes": [
+            {
+              "raws": {
+                "before": " ",
+                "between": ": "
+              },
+              "type": "decl",
+              "source": {
+                "end": {
+                  "column": 12,
+                  "line": 1,
+                  "offset": 12
+                },
+                "start": {
+                  "column": 3,
+                  "line": 1,
+                  "offset": 2
+                }
+              },
+              "prop": "color",
+              "value": "red"
+            }
+          ],
+          "source": {
+            "end": {
+              "column": 14,
+              "line": 1,
+              "offset": 14
+            },
+            "start": {
+              "column": 1,
+              "line": 1,
+              "offset": 0
+            }
+          },
+          "selector": ""
+        }
+      ],
+      "source": {
+        "end": {
+          "column": 1,
+          "line": 2,
+          "offset": 15
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0
+        }
+      }
+    },
+    "css": "{ color: red }\n"
+  },
+  "err-missed-semicolon-word.css": {
+    "error": {
+      "reason": "Missed semicolon",
+      "line": 1,
+      "column": 11,
+      "endLine": null,
+      "endColumn": null
+    }
+  },
+  "err-missed-semicolon.css": {
+    "error": {
+      "reason": "Missed semicolon",
+      "line": 1,
+      "column": 15,
+      "endLine": null,
+      "endColumn": null
+    }
+  },
+  "err-unclosed-block-nested.css": {
+    "error": {
+      "reason": "Unclosed block",
+      "line": 1,
+      "column": 17,
+      "endLine": null,
+      "endColumn": null
+    }
+  },
+  "err-unclosed-block.css": {
+    "error": {
+      "reason": "Unclosed block",
+      "line": 1,
+      "column": 1,
+      "endLine": null,
+      "endColumn": null
+    }
+  },
+  "err-unclosed-bracket.css": {
+    "error": {
+      "reason": "Unclosed bracket",
+      "line": 1,
+      "column": 15,
+      "endLine": 1,
+      "endColumn": 16
+    }
+  },
+  "err-unclosed-comment.css": {
+    "error": {
+      "reason": "Unclosed comment",
+      "line": 1,
+      "column": 6,
+      "endLine": null,
+      "endColumn": null
+    }
+  },
+  "err-unclosed-string.css": {
+    "error": {
+      "reason": "Unclosed string",
+      "line": 1,
+      "column": 14,
+      "endLine": null,
+      "endColumn": null
+    }
+  },
+  "err-unclosed-url.css": {
+    "error": {
+      "reason": "Unclosed bracket",
+      "line": 1,
+      "column": 20,
+      "endLine": null,
+      "endColumn": null
+    }
+  },
+  "err-unexpected-close.css": {
+    "error": {
+      "reason": "Unexpected }",
+      "line": 2,
+      "column": 1,
+      "endLine": 2,
+      "endColumn": 2
+    }
+  },
+  "err-unknown-word-top.css": {
+    "error": {
+      "reason": "Unknown word abc",
+      "line": 1,
+      "column": 1,
+      "endLine": 1,
+      "endColumn": 4
+    }
+  },
+  "err-unknown-word.css": {
+    "error": {
+      "reason": "Unknown word color",
+      "line": 1,
+      "column": 5,
+      "endLine": 1,
+      "endColumn": 10
+    }
+  },
+  "escape-hex.css": {
+    "ast": {
+      "raws": {
+        "semicolon": false,
+        "after": "\n"
+      },
+      "type": "root",
+      "nodes": [
+        {
+          "raws": {
+            "before": "",
+            "between": " ",
+            "semicolon": false,
+            "after": " "
+          },
+          "type": "rule",
+          "nodes": [
+            {
+              "raws": {
+                "before": " ",
+                "between": ": "
+              },
+              "type": "decl",
+              "source": {
+                "end": {
+                  "column": 20,
+                  "line": 1,
+                  "offset": 20
+                },
+                "start": {
+                  "column": 11,
+                  "line": 1,
+                  "offset": 10
+                }
+              },
+              "prop": "color",
+              "value": "red"
+            }
+          ],
+          "source": {
+            "end": {
+              "column": 22,
+              "line": 1,
+              "offset": 22
+            },
+            "start": {
+              "column": 1,
+              "line": 1,
+              "offset": 0
+            }
+          },
+          "selector": ".a\\2c b"
+        },
+        {
+          "raws": {
+            "before": "\n",
+            "between": " ",
+            "semicolon": false,
+            "after": " "
+          },
+          "type": "rule",
+          "nodes": [
+            {
+              "raws": {
+                "before": " ",
+                "between": ": "
+              },
+              "type": "decl",
+              "source": {
+                "end": {
+                  "column": 16,
+                  "line": 2,
+                  "offset": 39
+                },
+                "start": {
+                  "column": 11,
+                  "line": 2,
+                  "offset": 33
+                }
+              },
+              "prop": "top",
+              "value": "0"
+            }
+          ],
+          "source": {
+            "end": {
+              "column": 18,
+              "line": 2,
+              "offset": 41
+            },
+            "start": {
+              "column": 1,
+              "line": 2,
+              "offset": 23
+            }
+          },
+          "selector": ".\\41 BC"
+        },
+        {
+          "raws": {
+            "before": "\n",
+            "between": "",
+            "semicolon": false,
+            "after": " "
+          },
+          "type": "rule",
+          "nodes": [
+            {
+              "raws": {
+                "before": " ",
+                "between": ": "
+              },
+              "type": "decl",
+              "source": {
+                "end": {
+                  "column": 15,
+                  "line": 3,
+                  "offset": 57
+                },
+                "start": {
+                  "column": 10,
+                  "line": 3,
+                  "offset": 51
+                }
+              },
+              "prop": "top",
+              "value": "0"
+            }
+          ],
+          "source": {
+            "end": {
+              "column": 17,
+              "line": 3,
+              "offset": 59
+            },
+            "start": {
+              "column": 1,
+              "line": 3,
+              "offset": 42
+            }
+          },
+          "selector": ".\\41BC "
+        }
+      ],
+      "source": {
+        "end": {
+          "column": 1,
+          "line": 4,
+          "offset": 60
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0
+        }
+      }
+    },
+    "css": ".a\\2c b { color: red }\n.\\41 BC { top: 0 }\n.\\41BC { top: 0 }\n"
+  },
+  "escapes.css": {
+    "ast": {
+      "raws": {
+        "semicolon": false,
+        "after": "\n"
+      },
+      "type": "root",
+      "nodes": [
+        {
+          "raws": {
+            "before": "",
+            "between": " ",
+            "semicolon": false,
+            "after": " "
+          },
+          "type": "rule",
+          "nodes": [
+            {
+              "raws": {
+                "before": " ",
+                "between": ": "
+              },
+              "type": "decl",
+              "source": {
+                "end": {
+                  "column": 20,
+                  "line": 1,
+                  "offset": 20
+                },
+                "start": {
+                  "column": 11,
+                  "line": 1,
+                  "offset": 10
+                }
+              },
+              "prop": "color",
+              "value": "red"
+            }
+          ],
+          "source": {
+            "end": {
+              "column": 22,
+              "line": 1,
+              "offset": 22
+            },
+            "start": {
+              "column": 1,
+              "line": 1,
+              "offset": 0
+            }
+          },
+          "selector": "a\\.b\\ c"
+        },
+        {
+          "raws": {
+            "before": "\n",
+            "between": " ",
+            "semicolon": false,
+            "after": " "
+          },
+          "type": "rule",
+          "nodes": [
+            {
+              "raws": {
+                "before": " ",
+                "between": ": "
+              },
+              "type": "decl",
+              "source": {
+                "end": {
+                  "column": 16,
+                  "line": 2,
+                  "offset": 39
+                },
+                "start": {
+                  "column": 11,
+                  "line": 2,
+                  "offset": 33
+                }
+              },
+              "prop": "top",
+              "value": "0"
+            }
+          ],
+          "source": {
+            "end": {
+              "column": 18,
+              "line": 2,
+              "offset": 41
+            },
+            "start": {
+              "column": 1,
+              "line": 2,
+              "offset": 23
+            }
+          },
+          "selector": ".\\31 23"
+        },
+        {
+          "raws": {
+            "before": "\n",
+            "between": " ",
+            "after": ""
+          },
+          "type": "rule",
+          "nodes": [],
+          "source": {
+            "end": {
+              "column": 15,
+              "line": 3,
+              "offset": 57
+            },
+            "start": {
+              "column": 1,
+              "line": 3,
+              "offset": 42
+            }
+          },
+          "selector": "a[href=\"\\\"\"]"
+        },
+        {
+          "raws": {
+            "before": "\n",
+            "between": " ",
+            "after": ""
+          },
+          "type": "rule",
+          "nodes": [],
+          "source": {
+            "end": {
+              "column": 10,
+              "line": 4,
+              "offset": 68
+            },
+            "start": {
+              "column": 1,
+              "line": 4,
+              "offset": 58
+            }
+          },
+          "selector": "\\@media"
+        }
+      ],
+      "source": {
+        "end": {
+          "column": 1,
+          "line": 5,
+          "offset": 69
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0
+        }
+      }
+    },
+    "css": "a\\.b\\ c { color: red }\n.\\31 23 { top: 0 }\na[href=\"\\\"\"] {}\n\\@media {}\n"
+  },
+  "ie-hacks.css": {
+    "ast": {
+      "raws": {
+        "semicolon": false,
+        "after": "\n"
+      },
+      "type": "root",
+      "nodes": [
+        {
+          "raws": {
+            "before": "",
+            "between": " ",
+            "semicolon": true,
+            "after": "\n"
+          },
+          "type": "rule",
+          "nodes": [
+            {
+              "raws": {
+                "before": "\n  *",
+                "between": ": "
+              },
+              "type": "decl",
+              "source": {
+                "end": {
+                  "column": 11,
+                  "line": 2,
+                  "offset": 15
+                },
+                "start": {
+                  "column": 3,
+                  "line": 2,
+                  "offset": 6
+                }
+              },
+              "prop": "zoom",
+              "value": "1"
+            },
+            {
+              "raws": {
+                "before": "\n  _",
+                "between": ": "
+              },
+              "type": "decl",
+              "source": {
+                "end": {
+                  "column": 15,
+                  "line": 3,
+                  "offset": 31
+                },
+                "start": {
+                  "column": 3,
+                  "line": 3,
+                  "offset": 18
+                }
+              },
+              "prop": "height",
+              "value": "1px"
+            },
+            {
+              "raws": {
+                "before": "\n  ",
+                "between": ": "
+              },
+              "type": "decl",
+              "source": {
+                "end": {
+                  "column": 75,
+                  "line": 4,
+                  "offset": 107
+                },
+                "start": {
+                  "column": 3,
+                  "line": 4,
+                  "offset": 34
+                }
+              },
+              "prop": "filter",
+              "value": "progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff')"
+            },
+            {
+              "raws": {
+                "before": "\n  ",
+                "between": ": "
+              },
+              "type": "decl",
+              "source": {
+                "end": {
+                  "column": 61,
+                  "line": 5,
+                  "offset": 169
+                },
+                "start": {
+                  "column": 3,
+                  "line": 5,
+                  "offset": 110
+                }
+              },
+              "prop": "-ms-filter",
+              "value": "\"progid:DXImageTransform.Microsoft.gradient()\""
+            }
+          ],
+          "source": {
+            "end": {
+              "column": 1,
+              "line": 6,
+              "offset": 171
+            },
+            "start": {
+              "column": 1,
+              "line": 1,
+              "offset": 0
+            }
+          },
+          "selector": "a"
+        }
+      ],
+      "source": {
+        "end": {
+          "column": 1,
+          "line": 7,
+          "offset": 172
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0
+        }
+      }
+    },
+    "css": "a {\n  *zoom: 1;\n  _height: 1px;\n  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff');\n  -ms-filter: \"progid:DXImageTransform.Microsoft.gradient()\";\n}\n"
+  },
+  "important-variants.css": {
+    "ast": {
+      "raws": {
+        "semicolon": false,
+        "after": "\n"
+      },
+      "type": "root",
+      "nodes": [
+        {
+          "raws": {
+            "before": "",
+            "between": " ",
+            "semicolon": true,
+            "after": "\n"
+          },
+          "type": "rule",
+          "nodes": [
+            {
+              "raws": {
+                "before": "\n  ",
+                "between": ": ",
+                "important": "!important"
+              },
+              "type": "decl",
+              "source": {
+                "end": {
+                  "column": 17,
+                  "line": 2,
+                  "offset": 21
+                },
+                "start": {
+                  "column": 3,
+                  "line": 2,
+                  "offset": 6
+                }
+              },
+              "prop": "a",
+              "important": true,
+              "value": "1"
+            },
+            {
+              "raws": {
+                "before": "\n  ",
+                "between": ": ",
+                "important": " ! important"
+              },
+              "type": "decl",
+              "source": {
+                "end": {
+                  "column": 19,
+                  "line": 3,
+                  "offset": 41
+                },
+                "start": {
+                  "column": 3,
+                  "line": 3,
+                  "offset": 24
+                }
+              },
+              "prop": "b",
+              "important": true,
+              "value": "2"
+            },
+            {
+              "raws": {
+                "before": "\n  ",
+                "between": ": ",
+                "important": " !IMPORTANT"
+              },
+              "type": "decl",
+              "source": {
+                "end": {
+                  "column": 18,
+                  "line": 4,
+                  "offset": 60
+                },
+                "start": {
+                  "column": 3,
+                  "line": 4,
+                  "offset": 44
+                }
+              },
+              "prop": "c",
+              "important": true,
+              "value": "3"
+            },
+            {
+              "raws": {
+                "before": "\n  ",
+                "between": ": ",
+                "important": " !/*x*/important"
+              },
+              "type": "decl",
+              "source": {
+                "end": {
+                  "column": 23,
+                  "line": 5,
+                  "offset": 84
+                },
+                "start": {
+                  "column": 3,
+                  "line": 5,
+                  "offset": 63
+                }
+              },
+              "prop": "d",
+              "important": true,
+              "value": "4"
+            },
+            {
+              "raws": {
+                "before": "\n  ",
+                "between": ": ",
+                "value": {
+                  "raw": "5 /*x*/",
+                  "value": "5 "
+                }
+              },
+              "type": "decl",
+              "source": {
+                "end": {
+                  "column": 24,
+                  "line": 6,
+                  "offset": 109
+                },
+                "start": {
+                  "column": 3,
+                  "line": 6,
+                  "offset": 87
+                }
+              },
+              "prop": "e",
+              "important": true,
+              "value": "5 "
+            },
+            {
+              "raws": {
+                "before": "\n  ",
+                "between": ": "
+              },
+              "type": "decl",
+              "source": {
+                "end": {
+                  "column": 17,
+                  "line": 7,
+                  "offset": 127
+                },
+                "start": {
+                  "column": 3,
+                  "line": 7,
+                  "offset": 112
+                }
+              },
+              "prop": "f",
+              "value": "6 important"
+            },
+            {
+              "raws": {
+                "before": "\n  ",
+                "between": ": "
+              },
+              "type": "decl",
+              "source": {
+                "end": {
+                  "column": 19,
+                  "line": 8,
+                  "offset": 147
+                },
+                "start": {
+                  "column": 3,
+                  "line": 8,
+                  "offset": 130
+                }
+              },
+              "prop": "g",
+              "value": "7 !importantx"
+            }
+          ],
+          "source": {
+            "end": {
+              "column": 1,
+              "line": 9,
+              "offset": 149
+            },
+            "start": {
+              "column": 1,
+              "line": 1,
+              "offset": 0
+            }
+          },
+          "selector": "a"
+        }
+      ],
+      "source": {
+        "end": {
+          "column": 1,
+          "line": 10,
+          "offset": 150
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0
+        }
+      }
+    },
+    "css": "a {\n  a: 1!important;\n  b: 2 ! important;\n  c: 3 !IMPORTANT;\n  d: 4 !/*x*/important;\n  e: 5 /*x*/ !important;\n  f: 6 important;\n  g: 7 !importantx;\n}\n"
+  },
+  "minified-one-line.css": {
+    "ast": {
+      "raws": {
+        "semicolon": false,
+        "after": "\n"
+      },
+      "type": "root",
+      "nodes": [
+        {
+          "raws": {
+            "before": "",
+            "between": "",
+            "afterName": " ",
+            "semicolon": false,
+            "after": ""
+          },
+          "type": "atrule",
+          "name": "layer",
+          "source": {
+            "end": {
+              "column": 171,
+              "line": 1,
+              "offset": 171
+            },
+            "start": {
+              "column": 1,
+              "line": 1,
+              "offset": 0
+            }
+          },
+          "params": "properties",
+          "nodes": [
+            {
+              "raws": {
+                "before": "",
+                "between": "",
+                "afterName": " ",
+                "semicolon": false,
+                "after": ""
+              },
+              "type": "atrule",
+              "name": "supports",
+              "source": {
+                "end": {
+                  "column": 170,
+                  "line": 1,
+                  "offset": 170
+                },
+                "start": {
+                  "column": 19,
+                  "line": 1,
+                  "offset": 18
+                }
+              },
+              "params": "((-webkit-hyphens:none) and (not (margin-trim:inline)))",
+              "nodes": [
+                {
+                  "raws": {
+                    "before": "",
+                    "between": "",
+                    "semicolon": false,
+                    "after": ""
+                  },
+                  "type": "rule",
+                  "nodes": [
+                    {
+                      "raws": {
+                        "before": "",
+                        "between": ":"
+                      },
+                      "type": "decl",
+                      "source": {
+                        "end": {
+                          "column": 131,
+                          "line": 1,
+                          "offset": 131
+                        },
+                        "start": {
+                          "column": 113,
+                          "line": 1,
+                          "offset": 112
+                        }
+                      },
+                      "prop": "--tw-translate-x",
+                      "value": "0"
+                    },
+                    {
+                      "raws": {
+                        "before": "",
+                        "between": ":"
+                      },
+                      "type": "decl",
+                      "source": {
+                        "end": {
+                          "column": 153,
+                          "line": 1,
+                          "offset": 153
+                        },
+                        "start": {
+                          "column": 132,
+                          "line": 1,
+                          "offset": 131
+                        }
+                      },
+                      "prop": "--tw-shadow",
+                      "value": "0 0 #0000"
+                    },
+                    {
+                      "raws": {
+                        "before": "",
+                        "between": ":"
+                      },
+                      "type": "decl",
+                      "source": {
+                        "end": {
+                          "column": 168,
+                          "line": 1,
+                          "offset": 168
+                        },
+                        "start": {
+                          "column": 154,
+                          "line": 1,
+                          "offset": 153
+                        }
+                      },
+                      "prop": "--tw-content",
+                      "value": "\"\""
+                    }
+                  ],
+                  "source": {
+                    "end": {
+                      "column": 169,
+                      "line": 1,
+                      "offset": 169
+                    },
+                    "start": {
+                      "column": 85,
+                      "line": 1,
+                      "offset": 84
+                    }
+                  },
+                  "selector": "*,:before,:after,::backdrop"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "raws": {
+            "before": "",
+            "between": "",
+            "afterName": " ",
+            "semicolon": false,
+            "after": ""
+          },
+          "type": "atrule",
+          "name": "media",
+          "source": {
+            "end": {
+              "column": 258,
+              "line": 1,
+              "offset": 258
+            },
+            "start": {
+              "column": 172,
+              "line": 1,
+              "offset": 171
+            }
+          },
+          "params": "(min-width:40rem)",
+          "nodes": [
+            {
+              "raws": {
+                "before": "",
+                "between": "",
+                "semicolon": false,
+                "after": ""
+              },
+              "type": "rule",
+              "nodes": [
+                {
+                  "raws": {
+                    "before": "",
+                    "between": ":"
+                  },
+                  "type": "decl",
+                  "source": {
+                    "end": {
+                      "column": 218,
+                      "line": 1,
+                      "offset": 218
+                    },
+                    "start": {
+                      "column": 207,
+                      "line": 1,
+                      "offset": 206
+                    }
+                  },
+                  "prop": "display",
+                  "value": "flex"
+                }
+              ],
+              "source": {
+                "end": {
+                  "column": 219,
+                  "line": 1,
+                  "offset": 219
+                },
+                "start": {
+                  "column": 197,
+                  "line": 1,
+                  "offset": 196
+                }
+              },
+              "selector": ".sm\\:flex"
+            },
+            {
+              "raws": {
+                "before": "",
+                "between": "",
+                "semicolon": false,
+                "after": ""
+              },
+              "type": "rule",
+              "nodes": [
+                {
+                  "raws": {
+                    "before": "",
+                    "between": ":"
+                  },
+                  "type": "decl",
+                  "source": {
+                    "end": {
+                      "column": 256,
+                      "line": 1,
+                      "offset": 256
+                    },
+                    "start": {
+                      "column": 231,
+                      "line": 1,
+                      "offset": 230
+                    }
+                  },
+                  "prop": "gap",
+                  "value": "calc(var(--spacing)*2)"
+                }
+              ],
+              "source": {
+                "end": {
+                  "column": 257,
+                  "line": 1,
+                  "offset": 257
+                },
+                "start": {
+                  "column": 220,
+                  "line": 1,
+                  "offset": 219
+                }
+              },
+              "selector": ".sm\\:gap-2"
+            }
+          ]
+        },
+        {
+          "raws": {
+            "before": "",
+            "between": "",
+            "semicolon": false,
+            "after": ""
+          },
+          "type": "rule",
+          "nodes": [
+            {
+              "raws": {
+                "before": "",
+                "between": ":"
+              },
+              "type": "decl",
+              "source": {
+                "end": {
+                  "column": 300,
+                  "line": 1,
+                  "offset": 300
+                },
+                "start": {
+                  "column": 287,
+                  "line": 1,
+                  "offset": 286
+                }
+              },
+              "prop": "color",
+              "value": "var(--x)"
+            }
+          ],
+          "source": {
+            "end": {
+              "column": 301,
+              "line": 1,
+              "offset": 301
+            },
+            "start": {
+              "column": 259,
+              "line": 1,
+              "offset": 258
+            }
+          },
+          "selector": ".text-\\[color\\:var\\(--x\\)\\]"
+        },
+        {
+          "raws": {
+            "before": "",
+            "between": "",
+            "semicolon": false,
+            "after": ""
+          },
+          "type": "rule",
+          "nodes": [
+            {
+              "raws": {
+                "before": "",
+                "between": ":"
+              },
+              "type": "decl",
+              "source": {
+                "end": {
+                  "column": 335,
+                  "line": 1,
+                  "offset": 335
+                },
+                "start": {
+                  "column": 310,
+                  "line": 1,
+                  "offset": 309
+                }
+              },
+              "prop": "color",
+              "value": "oklch(70% .1 250/.5)"
+            }
+          ],
+          "source": {
+            "end": {
+              "column": 336,
+              "line": 1,
+              "offset": 336
+            },
+            "start": {
+              "column": 302,
+              "line": 1,
+              "offset": 301
+            }
+          },
+          "selector": "a:hover"
+        },
+        {
+          "raws": {
+            "before": "",
+            "between": "",
+            "semicolon": false,
+            "after": ""
+          },
+          "type": "rule",
+          "nodes": [
+            {
+              "raws": {
+                "before": "",
+                "between": ":"
+              },
+              "type": "decl",
+              "source": {
+                "end": {
+                  "column": 352,
+                  "line": 1,
+                  "offset": 356
+                },
+                "start": {
+                  "column": 342,
+                  "line": 1,
+                  "offset": 343
+                }
+              },
+              "prop": "content",
+              "value": "\"☃\""
+            }
+          ],
+          "source": {
+            "end": {
+              "column": 353,
+              "line": 1,
+              "offset": 357
+            },
+            "start": {
+              "column": 337,
+              "line": 1,
+              "offset": 336
+            }
+          },
+          "selector": ".é-ü"
+        }
+      ],
+      "source": {
+        "end": {
+          "column": 1,
+          "line": 2,
+          "offset": 358
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0
+        }
+      }
+    },
+    "css": "@layer properties{@supports ((-webkit-hyphens:none) and (not (margin-trim:inline))){*,:before,:after,::backdrop{--tw-translate-x:0;--tw-shadow:0 0 #0000;--tw-content:\"\"}}}@media (min-width:40rem){.sm\\:flex{display:flex}.sm\\:gap-2{gap:calc(var(--spacing)*2)}}.text-\\[color\\:var\\(--x\\)\\]{color:var(--x)}a:hover{color:oklch(70% .1 250/.5)}.é-ü{content:\"☃\"}\n"
+  },
+  "modern-selectors.css": {
+    "ast": {
+      "raws": {
+        "semicolon": false,
+        "after": "\n"
+      },
+      "type": "root",
+      "nodes": [
+        {
+          "raws": {
+            "before": "",
+            "between": " ",
+            "semicolon": false,
+            "after": " "
+          },
+          "type": "rule",
+          "nodes": [
+            {
+              "raws": {
+                "before": " ",
+                "between": ": "
+              },
+              "type": "decl",
+              "source": {
+                "end": {
+                  "column": 37,
+                  "line": 1,
+                  "offset": 37
+                },
+                "start": {
+                  "column": 28,
+                  "line": 1,
+                  "offset": 27
+                }
+              },
+              "prop": "color",
+              "value": "red"
+            }
+          ],
+          "source": {
+            "end": {
+              "column": 39,
+              "line": 1,
+              "offset": 39
+            },
+            "start": {
+              "column": 1,
+              "line": 1,
+              "offset": 0
+            }
+          },
+          "selector": ":is(a, b) :where(.c, .d)"
+        },
+        {
+          "raws": {
+            "before": "\n",
+            "between": " ",
+            "semicolon": false,
+            "after": " "
+          },
+          "type": "rule",
+          "nodes": [
+            {
+              "raws": {
+                "before": " ",
+                "between": ": "
+              },
+              "type": "decl",
+              "source": {
+                "end": {
+                  "column": 25,
+                  "line": 2,
+                  "offset": 65
+                },
+                "start": {
+                  "column": 16,
+                  "line": 2,
+                  "offset": 55
+                }
+              },
+              "prop": "color",
+              "value": "red"
+            }
+          ],
+          "source": {
+            "end": {
+              "column": 27,
+              "line": 2,
+              "offset": 67
+            },
+            "start": {
+              "column": 1,
+              "line": 2,
+              "offset": 40
+            }
+          },
+          "selector": "a:has(> img)"
+        },
+        {
+          "raws": {
+            "before": "\n",
+            "between": " ",
+            "semicolon": false,
+            "after": " "
+          },
+          "type": "rule",
+          "nodes": [
+            {
+              "raws": {
+                "before": " ",
+                "between": ": "
+              },
+              "type": "decl",
+              "source": {
+                "end": {
+                  "column": 31,
+                  "line": 3,
+                  "offset": 99
+                },
+                "start": {
+                  "column": 22,
+                  "line": 3,
+                  "offset": 89
+                }
+              },
+              "prop": "color",
+              "value": "red"
+            }
+          ],
+          "source": {
+            "end": {
+              "column": 33,
+              "line": 3,
+              "offset": 101
+            },
+            "start": {
+              "column": 1,
+              "line": 3,
+              "offset": 68
+            }
+          },
+          "selector": "input::placeholder"
+        },
+        {
+          "raws": {
+            "before": "\n",
+            "between": " ",
+            "semicolon": false,
+            "after": " "
+          },
+          "type": "rule",
+          "nodes": [
+            {
+              "raws": {
+                "before": " ",
+                "between": ": "
+              },
+              "type": "decl",
+              "source": {
+                "end": {
+                  "column": 37,
+                  "line": 4,
+                  "offset": 139
+                },
+                "start": {
+                  "column": 28,
+                  "line": 4,
+                  "offset": 129
+                }
+              },
+              "prop": "color",
+              "value": "red"
+            }
+          ],
+          "source": {
+            "end": {
+              "column": 39,
+              "line": 4,
+              "offset": 141
+            },
+            "start": {
+              "column": 1,
+              "line": 4,
+              "offset": 102
+            }
+          },
+          "selector": "li:nth-child(2n+1 of .x)"
+        }
+      ],
+      "source": {
+        "end": {
+          "column": 1,
+          "line": 5,
+          "offset": 142
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0
+        }
+      }
+    },
+    "css": ":is(a, b) :where(.c, .d) { color: red }\na:has(> img) { color: red }\ninput::placeholder { color: red }\nli:nth-child(2n+1 of .x) { color: red }\n"
+  },
+  "nesting.css": {
+    "ast": {
+      "raws": {
+        "semicolon": false,
+        "after": "\n"
+      },
+      "type": "root",
+      "nodes": [
+        {
+          "raws": {
+            "before": "",
+            "between": " ",
+            "semicolon": false,
+            "after": "\n"
+          },
+          "type": "rule",
+          "nodes": [
+            {
+              "raws": {
+                "before": "\n  ",
+                "between": ": "
+              },
+              "type": "decl",
+              "source": {
+                "end": {
+                  "column": 13,
+                  "line": 2,
+                  "offset": 17
+                },
+                "start": {
+                  "column": 3,
+                  "line": 2,
+                  "offset": 6
+                }
+              },
+              "prop": "color",
+              "value": "red"
+            },
+            {
+              "raws": {
+                "before": "\n  ",
+                "between": " ",
+                "semicolon": false,
+                "after": " "
+              },
+              "type": "rule",
+              "nodes": [
+                {
+                  "raws": {
+                    "before": " ",
+                    "between": ": "
+                  },
+                  "type": "decl",
+                  "source": {
+                    "end": {
+                      "column": 19,
+                      "line": 3,
+                      "offset": 37
+                    },
+                    "start": {
+                      "column": 9,
+                      "line": 3,
+                      "offset": 26
+                    }
+                  },
+                  "prop": "color",
+                  "value": "blue"
+                }
+              ],
+              "source": {
+                "end": {
+                  "column": 21,
+                  "line": 3,
+                  "offset": 39
+                },
+                "start": {
+                  "column": 3,
+                  "line": 3,
+                  "offset": 20
+                }
+              },
+              "selector": "& b"
+            },
+            {
+              "raws": {
+                "before": "\n  ",
+                "between": " ",
+                "semicolon": false,
+                "after": " "
+              },
+              "type": "rule",
+              "nodes": [
+                {
+                  "raws": {
+                    "before": " ",
+                    "between": ": "
+                  },
+                  "type": "decl",
+                  "source": {
+                    "end": {
+                      "column": 24,
+                      "line": 4,
+                      "offset": 64
+                    },
+                    "start": {
+                      "column": 13,
+                      "line": 4,
+                      "offset": 52
+                    }
+                  },
+                  "prop": "color",
+                  "value": "green"
+                }
+              ],
+              "source": {
+                "end": {
+                  "column": 26,
+                  "line": 4,
+                  "offset": 66
+                },
+                "start": {
+                  "column": 3,
+                  "line": 4,
+                  "offset": 42
+                }
+              },
+              "selector": "&:hover"
+            },
+            {
+              "raws": {
+                "before": "\n  ",
+                "between": " ",
+                "afterName": " ",
+                "semicolon": false,
+                "after": " "
+              },
+              "type": "atrule",
+              "name": "media",
+              "source": {
+                "end": {
+                  "column": 32,
+                  "line": 5,
+                  "offset": 99
+                },
+                "start": {
+                  "column": 3,
+                  "line": 5,
+                  "offset": 69
+                }
+              },
+              "params": "screen",
+              "nodes": [
+                {
+                  "raws": {
+                    "before": " ",
+                    "between": ": "
+                  },
+                  "type": "decl",
+                  "source": {
+                    "end": {
+                      "column": 30,
+                      "line": 5,
+                      "offset": 97
+                    },
+                    "start": {
+                      "column": 19,
+                      "line": 5,
+                      "offset": 85
+                    }
+                  },
+                  "prop": "color",
+                  "value": "black"
+                }
+              ]
+            }
+          ],
+          "source": {
+            "end": {
+              "column": 1,
+              "line": 6,
+              "offset": 101
+            },
+            "start": {
+              "column": 1,
+              "line": 1,
+              "offset": 0
+            }
+          },
+          "selector": "a"
+        }
+      ],
+      "source": {
+        "end": {
+          "column": 1,
+          "line": 7,
+          "offset": 102
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0
+        }
+      }
+    },
+    "css": "a {\n  color: red;\n  & b { color: blue }\n  &:hover { color: green }\n  @media screen { color: black }\n}\n"
+  },
+  "no-semicolon-last.css": {
+    "ast": {
+      "raws": {
+        "semicolon": false,
+        "after": "\n"
+      },
+      "type": "root",
+      "nodes": [
+        {
+          "raws": {
+            "before": "",
+            "between": " ",
+            "semicolon": false,
+            "after": " "
+          },
+          "type": "rule",
+          "nodes": [
+            {
+              "raws": {
+                "before": " ",
+                "between": ": "
+              },
+              "type": "decl",
+              "source": {
+                "end": {
+                  "column": 14,
+                  "line": 1,
+                  "offset": 14
+                },
+                "start": {
+                  "column": 5,
+                  "line": 1,
+                  "offset": 4
+                }
+              },
+              "prop": "color",
+              "value": "red"
+            }
+          ],
+          "source": {
+            "end": {
+              "column": 16,
+              "line": 1,
+              "offset": 16
+            },
+            "start": {
+              "column": 1,
+              "line": 1,
+              "offset": 0
+            }
+          },
+          "selector": "a"
+        },
+        {
+          "raws": {
+            "before": "\n",
+            "between": " ",
+            "semicolon": false,
+            "after": " "
+          },
+          "type": "rule",
+          "nodes": [
+            {
+              "raws": {
+                "before": " ",
+                "between": ": "
+              },
+              "type": "decl",
+              "source": {
+                "end": {
+                  "column": 16,
+                  "line": 2,
+                  "offset": 33
+                },
+                "start": {
+                  "column": 5,
+                  "line": 2,
+                  "offset": 21
+                }
+              },
+              "prop": "color",
+              "value": "blue"
+            },
+            {
+              "raws": {
+                "before": "\n  ",
+                "between": ": "
+              },
+              "type": "decl",
+              "source": {
+                "end": {
+                  "column": 8,
+                  "line": 3,
+                  "offset": 42
+                },
+                "start": {
+                  "column": 3,
+                  "line": 3,
+                  "offset": 36
+                }
+              },
+              "prop": "top",
+              "value": "0"
+            }
+          ],
+          "source": {
+            "end": {
+              "column": 10,
+              "line": 3,
+              "offset": 44
+            },
+            "start": {
+              "column": 1,
+              "line": 2,
+              "offset": 17
+            }
+          },
+          "selector": "b"
+        }
+      ],
+      "source": {
+        "end": {
+          "column": 1,
+          "line": 4,
+          "offset": 45
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0
+        }
+      }
+    },
+    "css": "a { color: red }\nb { color: blue;\n  top: 0 }\n"
+  },
+  "non-ascii-selectors.css": {
+    "ast": {
+      "raws": {
+        "semicolon": false,
+        "after": "\n"
+      },
+      "type": "root",
+      "nodes": [
+        {
+          "raws": {
+            "before": "",
+            "between": " ",
+            "semicolon": false,
+            "after": " "
+          },
+          "type": "rule",
+          "nodes": [
+            {
+              "raws": {
+                "before": " ",
+                "between": ": "
+              },
+              "type": "decl",
+              "source": {
+                "end": {
+                  "column": 30,
+                  "line": 1,
+                  "offset": 40
+                },
+                "start": {
+                  "column": 22,
+                  "line": 1,
+                  "offset": 31
+                }
+              },
+              "prop": "margin",
+              "value": "0"
+            }
+          ],
+          "source": {
+            "end": {
+              "column": 32,
+              "line": 1,
+              "offset": 42
+            },
+            "start": {
+              "column": 1,
+              "line": 1,
+              "offset": 0
+            }
+          },
+          "selector": ".ünïcödé, .日本 > .語"
+        }
+      ],
+      "source": {
+        "end": {
+          "column": 1,
+          "line": 2,
+          "offset": 43
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0
+        }
+      }
+    },
+    "css": ".ünïcödé, .日本 > .語 { margin: 0 }\n"
+  },
+  "non-ascii.css": {
+    "ast": {
+      "raws": {
+        "semicolon": false,
+        "after": "\n"
+      },
+      "type": "root",
+      "nodes": [
+        {
+          "raws": {
+            "before": "",
+            "left": " ",
+            "right": " "
+          },
+          "type": "comment",
+          "source": {
+            "end": {
+              "column": 19,
+              "line": 1,
+              "offset": 23
+            },
+            "start": {
+              "column": 1,
+              "line": 1,
+              "offset": 0
+            }
+          },
+          "text": "héllo → wörld"
+        },
+        {
+          "raws": {
+            "before": "\n",
+            "between": " ",
+            "semicolon": true,
+            "after": " "
+          },
+          "type": "rule",
+          "nodes": [
+            {
+              "raws": {
+                "before": " ",
+                "between": ": "
+              },
+              "type": "decl",
+              "source": {
+                "end": {
+                  "column": 24,
+                  "line": 2,
+                  "offset": 59
+                },
+                "start": {
+                  "column": 10,
+                  "line": 2,
+                  "offset": 38
+                }
+              },
+              "prop": "content",
+              "value": "\"日本語\""
+            }
+          ],
+          "source": {
+            "end": {
+              "column": 26,
+              "line": 2,
+              "offset": 61
+            },
+            "start": {
+              "column": 1,
+              "line": 2,
+              "offset": 24
+            }
+          },
+          "selector": ".класс"
+        },
+        {
+          "raws": {
+            "before": "\n",
+            "between": "",
+            "semicolon": true,
+            "after": " "
+          },
+          "type": "rule",
+          "nodes": [
+            {
+              "raws": {
+                "before": " ",
+                "between": ": "
+              },
+              "type": "decl",
+              "source": {
+                "end": {
+                  "column": 31,
+                  "line": 3,
+                  "offset": 96
+                },
+                "start": {
+                  "column": 17,
+                  "line": 3,
+                  "offset": 78
+                }
+              },
+              "prop": "content",
+              "value": "\"😀 x\""
+            }
+          ],
+          "source": {
+            "end": {
+              "column": 33,
+              "line": 3,
+              "offset": 98
+            },
+            "start": {
+              "column": 1,
+              "line": 3,
+              "offset": 62
+            }
+          },
+          "selector": ".emoji-\\1F600 "
+        },
+        {
+          "raws": {
+            "before": "\n",
+            "between": " ",
+            "semicolon": false,
+            "after": " "
+          },
+          "type": "rule",
+          "nodes": [
+            {
+              "raws": {
+                "before": " ",
+                "between": ": "
+              },
+              "type": "decl",
+              "source": {
+                "end": {
+                  "column": 23,
+                  "line": 4,
+                  "offset": 124
+                },
+                "start": {
+                  "column": 12,
+                  "line": 4,
+                  "offset": 110
+                }
+              },
+              "prop": "content",
+              "value": "\"→\""
+            }
+          ],
+          "source": {
+            "end": {
+              "column": 25,
+              "line": 4,
+              "offset": 126
+            },
+            "start": {
+              "column": 1,
+              "line": 4,
+              "offset": 99
+            }
+          },
+          "selector": "a::after"
+        }
+      ],
+      "source": {
+        "end": {
+          "column": 1,
+          "line": 5,
+          "offset": 127
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0
+        }
+      }
+    },
+    "css": "/* héllo → wörld */\n.класс { content: \"日本語\"; }\n.emoji-\\1F600 { content: \"😀 x\"; }\na::after { content: \"→\" }\n"
+  },
+  "only-spaces.css": {
+    "ast": {
+      "raws": {
+        "after": "   \n\t\n"
+      },
+      "type": "root",
+      "nodes": [],
+      "source": {
+        "end": {
+          "column": 1,
+          "line": 3,
+          "offset": 6
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0
+        }
+      }
+    },
+    "css": "   \n\t\n"
+  },
+  "semicolons.css": {
+    "ast": {
+      "raws": {
+        "semicolon": false,
+        "after": "\n"
+      },
+      "type": "root",
+      "nodes": [
+        {
+          "raws": {
+            "before": ";;;\n",
+            "between": " ",
+            "after": "",
+            "ownSemicolon": ";"
+          },
+          "type": "rule",
+          "nodes": [],
+          "source": {
+            "end": {
+              "column": 5,
+              "line": 2,
+              "offset": 9
+            },
+            "start": {
+              "column": 1,
+              "line": 2,
+              "offset": 4
+            }
+          },
+          "selector": "a"
+        },
+        {
+          "raws": {
+            "before": ";\n",
+            "between": " ",
+            "semicolon": true,
+            "after": "; ",
+            "ownSemicolon": "\n;"
+          },
+          "type": "rule",
+          "nodes": [
+            {
+              "raws": {
+                "before": " ;; ",
+                "between": ": "
+              },
+              "type": "decl",
+              "source": {
+                "end": {
+                  "column": 18,
+                  "line": 3,
+                  "offset": 29
+                },
+                "start": {
+                  "column": 8,
+                  "line": 3,
+                  "offset": 18
+                }
+              },
+              "prop": "color",
+              "value": "red"
+            }
+          ],
+          "source": {
+            "end": {
+              "column": 1,
+              "line": 4,
+              "offset": 35
+            },
+            "start": {
+              "column": 1,
+              "line": 3,
+              "offset": 11
+            }
+          },
+          "selector": "b"
+        }
+      ],
+      "source": {
+        "end": {
+          "column": 1,
+          "line": 5,
+          "offset": 35
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0
+        }
+      }
+    },
+    "css": ";;;\na {};;\nb { ;; color: red;; }\n;\n"
+  },
+  "tabs-formfeed.css": {
+    "ast": {
+      "raws": {
+        "semicolon": false,
+        "after": "\n"
+      },
+      "type": "root",
+      "nodes": [
+        {
+          "raws": {
+            "before": "",
+            "between": "\t",
+            "semicolon": true,
+            "after": "\f"
+          },
+          "type": "rule",
+          "nodes": [
+            {
+              "raws": {
+                "before": "\n\t",
+                "between": ":\t"
+              },
+              "type": "decl",
+              "source": {
+                "end": {
+                  "column": 12,
+                  "line": 2,
+                  "offset": 16
+                },
+                "start": {
+                  "column": 2,
+                  "line": 2,
+                  "offset": 5
+                }
+              },
+              "prop": "color",
+              "value": "red"
+            }
+          ],
+          "source": {
+            "end": {
+              "column": 14,
+              "line": 2,
+              "offset": 18
+            },
+            "start": {
+              "column": 1,
+              "line": 1,
+              "offset": 0
+            }
+          },
+          "selector": "a"
+        }
+      ],
+      "source": {
+        "end": {
+          "column": 1,
+          "line": 3,
+          "offset": 19
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0
+        }
+      }
+    },
+    "css": "a\t{\n\tcolor:\tred;\f}\n"
+  },
+  "trailing-comment-in-rule.css": {
+    "ast": {
+      "raws": {
+        "semicolon": false,
+        "after": "\n"
+      },
+      "type": "root",
+      "nodes": [
+        {
+          "raws": {
+            "before": "",
+            "between": " ",
+            "semicolon": true,
+            "after": " "
+          },
+          "type": "rule",
+          "nodes": [
+            {
+              "raws": {
+                "before": " ",
+                "between": ": "
+              },
+              "type": "decl",
+              "source": {
+                "end": {
+                  "column": 15,
+                  "line": 1,
+                  "offset": 15
+                },
+                "start": {
+                  "column": 5,
+                  "line": 1,
+                  "offset": 4
+                }
+              },
+              "prop": "color",
+              "value": "red"
+            },
+            {
+              "raws": {
+                "before": " ",
+                "left": " ",
+                "right": " "
+              },
+              "type": "comment",
+              "source": {
+                "end": {
+                  "column": 23,
+                  "line": 1,
+                  "offset": 23
+                },
+                "start": {
+                  "column": 17,
+                  "line": 1,
+                  "offset": 16
+                }
+              },
+              "text": "c"
+            }
+          ],
+          "source": {
+            "end": {
+              "column": 25,
+              "line": 1,
+              "offset": 25
+            },
+            "start": {
+              "column": 1,
+              "line": 1,
+              "offset": 0
+            }
+          },
+          "selector": "a"
+        },
+        {
+          "raws": {
+            "before": "\n",
+            "between": " ",
+            "semicolon": false,
+            "after": " "
+          },
+          "type": "rule",
+          "nodes": [
+            {
+              "raws": {
+                "before": " ",
+                "between": ": "
+              },
+              "type": "decl",
+              "source": {
+                "end": {
+                  "column": 14,
+                  "line": 2,
+                  "offset": 40
+                },
+                "start": {
+                  "column": 5,
+                  "line": 2,
+                  "offset": 30
+                }
+              },
+              "prop": "color",
+              "value": "red"
+            },
+            {
+              "raws": {
+                "before": " ",
+                "left": " ",
+                "right": " "
+              },
+              "type": "comment",
+              "source": {
+                "end": {
+                  "column": 22,
+                  "line": 2,
+                  "offset": 48
+                },
+                "start": {
+                  "column": 16,
+                  "line": 2,
+                  "offset": 41
+                }
+              },
+              "text": "c"
+            }
+          ],
+          "source": {
+            "end": {
+              "column": 24,
+              "line": 2,
+              "offset": 50
+            },
+            "start": {
+              "column": 1,
+              "line": 2,
+              "offset": 26
+            }
+          },
+          "selector": "b"
+        }
+      ],
+      "source": {
+        "end": {
+          "column": 1,
+          "line": 3,
+          "offset": 51
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0
+        }
+      }
+    },
+    "css": "a { color: red; /* c */ }\nb { color: red /* c */ }\n"
+  },
+  "unicode-range.css": {
+    "ast": {
+      "raws": {
+        "semicolon": false,
+        "after": "\n"
+      },
+      "type": "root",
+      "nodes": [
+        {
+          "raws": {
+            "before": "",
+            "between": " ",
+            "afterName": "",
+            "semicolon": true,
+            "after": " "
+          },
+          "type": "atrule",
+          "name": "font-face",
+          "source": {
+            "end": {
+              "column": 49,
+              "line": 1,
+              "offset": 49
+            },
+            "start": {
+              "column": 1,
+              "line": 1,
+              "offset": 0
+            }
+          },
+          "params": "",
+          "nodes": [
+            {
+              "raws": {
+                "before": " ",
+                "between": ": "
+              },
+              "type": "decl",
+              "source": {
+                "end": {
+                  "column": 47,
+                  "line": 1,
+                  "offset": 47
+                },
+                "start": {
+                  "column": 14,
+                  "line": 1,
+                  "offset": 13
+                }
+              },
+              "prop": "unicode-range",
+              "value": "U+0025-00FF, U+4??"
+            }
+          ]
+        }
+      ],
+      "source": {
+        "end": {
+          "column": 1,
+          "line": 2,
+          "offset": 50
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0
+        }
+      }
+    },
+    "css": "@font-face { unicode-range: U+0025-00FF, U+4??; }\n"
+  },
+  "url-newline.css": {
+    "ast": {
+      "raws": {
+        "semicolon": false,
+        "after": "\n"
+      },
+      "type": "root",
+      "nodes": [
+        {
+          "raws": {
+            "before": "",
+            "between": " ",
+            "semicolon": false,
+            "after": " "
+          },
+          "type": "rule",
+          "nodes": [
+            {
+              "raws": {
+                "before": " ",
+                "between": ": "
+              },
+              "type": "decl",
+              "source": {
+                "end": {
+                  "column": 1,
+                  "line": 3,
+                  "offset": 30
+                },
+                "start": {
+                  "column": 5,
+                  "line": 1,
+                  "offset": 4
+                }
+              },
+              "prop": "background",
+              "value": "url(\nfoo.png\n)"
+            }
+          ],
+          "source": {
+            "end": {
+              "column": 3,
+              "line": 3,
+              "offset": 32
+            },
+            "start": {
+              "column": 1,
+              "line": 1,
+              "offset": 0
+            }
+          },
+          "selector": "a"
+        }
+      ],
+      "source": {
+        "end": {
+          "column": 1,
+          "line": 4,
+          "offset": 33
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0
+        }
+      }
+    },
+    "css": "a { background: url(\nfoo.png\n) }\n"
+  },
+  "url-with-braces.css": {
+    "ast": {
+      "raws": {
+        "semicolon": false,
+        "after": "\n"
+      },
+      "type": "root",
+      "nodes": [
+        {
+          "raws": {
+            "before": "",
+            "between": " ",
+            "afterName": " ",
+            "after": ""
+          },
+          "type": "atrule",
+          "name": "-moz-document",
+          "source": {
+            "end": {
+              "column": 45,
+              "line": 1,
+              "offset": 45
+            },
+            "start": {
+              "column": 1,
+              "line": 1,
+              "offset": 0
+            }
+          },
+          "params": "url-prefix(\"example.com/{\")",
+          "nodes": []
+        }
+      ],
+      "source": {
+        "end": {
+          "column": 1,
+          "line": 2,
+          "offset": 46
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0
+        }
+      }
+    },
+    "css": "@-moz-document url-prefix(\"example.com/{\") {}\n"
+  },
+  "urls.css": {
+    "ast": {
+      "raws": {
+        "semicolon": false,
+        "after": "\n"
+      },
+      "type": "root",
+      "nodes": [
+        {
+          "raws": {
+            "before": "",
+            "between": " ",
+            "semicolon": false,
+            "after": " "
+          },
+          "type": "rule",
+          "nodes": [
+            {
+              "raws": {
+                "before": " ",
+                "between": ": "
+              },
+              "type": "decl",
+              "source": {
+                "end": {
+                  "column": 28,
+                  "line": 1,
+                  "offset": 28
+                },
+                "start": {
+                  "column": 5,
+                  "line": 1,
+                  "offset": 4
+                }
+              },
+              "prop": "background",
+              "value": "url(foo.png)"
+            }
+          ],
+          "source": {
+            "end": {
+              "column": 30,
+              "line": 1,
+              "offset": 30
+            },
+            "start": {
+              "column": 1,
+              "line": 1,
+              "offset": 0
+            }
+          },
+          "selector": "a"
+        },
+        {
+          "raws": {
+            "before": "\n",
+            "between": " ",
+            "semicolon": false,
+            "after": " "
+          },
+          "type": "rule",
+          "nodes": [
+            {
+              "raws": {
+                "before": " ",
+                "between": ": "
+              },
+              "type": "decl",
+              "source": {
+                "end": {
+                  "column": 30,
+                  "line": 2,
+                  "offset": 61
+                },
+                "start": {
+                  "column": 5,
+                  "line": 2,
+                  "offset": 35
+                }
+              },
+              "prop": "background",
+              "value": "url( foo.png )"
+            }
+          ],
+          "source": {
+            "end": {
+              "column": 32,
+              "line": 2,
+              "offset": 63
+            },
+            "start": {
+              "column": 1,
+              "line": 2,
+              "offset": 31
+            }
+          },
+          "selector": "b"
+        },
+        {
+          "raws": {
+            "before": "\n",
+            "between": " ",
+            "semicolon": false,
+            "after": " "
+          },
+          "type": "rule",
+          "nodes": [
+            {
+              "raws": {
+                "before": " ",
+                "between": ": "
+              },
+              "type": "decl",
+              "source": {
+                "end": {
+                  "column": 30,
+                  "line": 3,
+                  "offset": 94
+                },
+                "start": {
+                  "column": 5,
+                  "line": 3,
+                  "offset": 68
+                }
+              },
+              "prop": "background",
+              "value": "url('foo.png')"
+            }
+          ],
+          "source": {
+            "end": {
+              "column": 32,
+              "line": 3,
+              "offset": 96
+            },
+            "start": {
+              "column": 1,
+              "line": 3,
+              "offset": 64
+            }
+          },
+          "selector": "c"
+        },
+        {
+          "raws": {
+            "before": "\n",
+            "between": " ",
+            "semicolon": false,
+            "after": " "
+          },
+          "type": "rule",
+          "nodes": [
+            {
+              "raws": {
+                "before": " ",
+                "between": ": "
+              },
+              "type": "decl",
+              "source": {
+                "end": {
+                  "column": 30,
+                  "line": 4,
+                  "offset": 127
+                },
+                "start": {
+                  "column": 5,
+                  "line": 4,
+                  "offset": 101
+                }
+              },
+              "prop": "background",
+              "value": "url(\"foo.png\")"
+            }
+          ],
+          "source": {
+            "end": {
+              "column": 32,
+              "line": 4,
+              "offset": 129
+            },
+            "start": {
+              "column": 1,
+              "line": 4,
+              "offset": 97
+            }
+          },
+          "selector": "d"
+        },
+        {
+          "raws": {
+            "before": "\n",
+            "between": " ",
+            "semicolon": false,
+            "after": " "
+          },
+          "type": "rule",
+          "nodes": [
+            {
+              "raws": {
+                "before": " ",
+                "between": ": "
+              },
+              "type": "decl",
+              "source": {
+                "end": {
+                  "column": 63,
+                  "line": 5,
+                  "offset": 193
+                },
+                "start": {
+                  "column": 5,
+                  "line": 5,
+                  "offset": 134
+                }
+              },
+              "prop": "background",
+              "value": "url(data:image/svg+xml;base64,PHN2Zz48L3N2Zz4=)"
+            }
+          ],
+          "source": {
+            "end": {
+              "column": 65,
+              "line": 5,
+              "offset": 195
+            },
+            "start": {
+              "column": 1,
+              "line": 5,
+              "offset": 130
+            }
+          },
+          "selector": "e"
+        },
+        {
+          "raws": {
+            "before": "\n",
+            "between": " ",
+            "semicolon": false,
+            "after": " "
+          },
+          "type": "rule",
+          "nodes": [
+            {
+              "raws": {
+                "before": " ",
+                "between": ": "
+              },
+              "type": "decl",
+              "source": {
+                "end": {
+                  "column": 33,
+                  "line": 6,
+                  "offset": 229
+                },
+                "start": {
+                  "column": 5,
+                  "line": 6,
+                  "offset": 200
+                }
+              },
+              "prop": "background",
+              "value": "url(foo\\)bar.png)"
+            }
+          ],
+          "source": {
+            "end": {
+              "column": 35,
+              "line": 6,
+              "offset": 231
+            },
+            "start": {
+              "column": 1,
+              "line": 6,
+              "offset": 196
+            }
+          },
+          "selector": "f"
+        },
+        {
+          "raws": {
+            "before": "\n",
+            "between": " ",
+            "semicolon": false,
+            "after": " "
+          },
+          "type": "rule",
+          "nodes": [
+            {
+              "raws": {
+                "before": " ",
+                "between": ": "
+              },
+              "type": "decl",
+              "source": {
+                "end": {
+                  "column": 24,
+                  "line": 7,
+                  "offset": 256
+                },
+                "start": {
+                  "column": 5,
+                  "line": 7,
+                  "offset": 236
+                }
+              },
+              "prop": "background",
+              "value": "url(a(b)"
+            }
+          ],
+          "source": {
+            "end": {
+              "column": 26,
+              "line": 7,
+              "offset": 258
+            },
+            "start": {
+              "column": 1,
+              "line": 7,
+              "offset": 232
+            }
+          },
+          "selector": "g"
+        }
+      ],
+      "source": {
+        "end": {
+          "column": 1,
+          "line": 8,
+          "offset": 259
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0
+        }
+      }
+    },
+    "css": "a { background: url(foo.png) }\nb { background: url( foo.png ) }\nc { background: url('foo.png') }\nd { background: url(\"foo.png\") }\ne { background: url(data:image/svg+xml;base64,PHN2Zz48L3N2Zz4=) }\nf { background: url(foo\\)bar.png) }\ng { background: url(a(b) }\n"
+  },
+  "values.css": {
+    "ast": {
+      "raws": {
+        "semicolon": false,
+        "after": "\n"
+      },
+      "type": "root",
+      "nodes": [
+        {
+          "raws": {
+            "before": "",
+            "between": " ",
+            "semicolon": true,
+            "after": "\n"
+          },
+          "type": "rule",
+          "nodes": [
+            {
+              "raws": {
+                "before": "\n  ",
+                "between": ": "
+              },
+              "type": "decl",
+              "source": {
+                "end": {
+                  "column": 47,
+                  "line": 2,
+                  "offset": 51
+                },
+                "start": {
+                  "column": 3,
+                  "line": 2,
+                  "offset": 6
+                }
+              },
+              "prop": "grid-template",
+              "value": "\"a b\" 1fr \"c d\" 2fr / 1fr 2fr"
+            },
+            {
+              "raws": {
+                "before": "\n  ",
+                "between": ": "
+              },
+              "type": "decl",
+              "source": {
+                "end": {
+                  "column": 51,
+                  "line": 3,
+                  "offset": 103
+                },
+                "start": {
+                  "column": 3,
+                  "line": 3,
+                  "offset": 54
+                }
+              },
+              "prop": "font",
+              "value": "bold 12px/1.5 \"Helvetica Neue\", sans-serif"
+            },
+            {
+              "raws": {
+                "before": "\n  ",
+                "between": ": "
+              },
+              "type": "decl",
+              "source": {
+                "end": {
+                  "column": 49,
+                  "line": 4,
+                  "offset": 153
+                },
+                "start": {
+                  "column": 3,
+                  "line": 4,
+                  "offset": 106
+                }
+              },
+              "prop": "transition",
+              "value": "all .3s cubic-bezier(.25,.8,.25,1)"
+            },
+            {
+              "raws": {
+                "before": "\n  ",
+                "between": ": "
+              },
+              "type": "decl",
+              "source": {
+                "end": {
+                  "column": 70,
+                  "line": 5,
+                  "offset": 224
+                },
+                "start": {
+                  "column": 3,
+                  "line": 5,
+                  "offset": 156
+                }
+              },
+              "prop": "background",
+              "value": "linear-gradient(to right, rgba(0,0,0,.5) 0%, #fff 100%)"
+            },
+            {
+              "raws": {
+                "before": "\n  ",
+                "between": ": "
+              },
+              "type": "decl",
+              "source": {
+                "end": {
+                  "column": 18,
+                  "line": 6,
+                  "offset": 243
+                },
+                "start": {
+                  "column": 3,
+                  "line": 6,
+                  "offset": 227
+                }
+              },
+              "prop": "content",
+              "value": "\"a\\\"b\""
+            },
+            {
+              "raws": {
+                "before": "\n  ",
+                "between": ": "
+              },
+              "type": "decl",
+              "source": {
+                "end": {
+                  "column": 18,
+                  "line": 7,
+                  "offset": 262
+                },
+                "start": {
+                  "column": 3,
+                  "line": 7,
+                  "offset": 246
+                }
+              },
+              "prop": "content",
+              "value": "'a\\'b'"
+            },
+            {
+              "raws": {
+                "before": "\n  ",
+                "between": ": "
+              },
+              "type": "decl",
+              "source": {
+                "end": {
+                  "column": 37,
+                  "line": 8,
+                  "offset": 300
+                },
+                "start": {
+                  "column": 3,
+                  "line": 8,
+                  "offset": 265
+                }
+              },
+              "prop": "width",
+              "value": "calc(100% - (2 * var(--x)))"
+            }
+          ],
+          "source": {
+            "end": {
+              "column": 1,
+              "line": 9,
+              "offset": 302
+            },
+            "start": {
+              "column": 1,
+              "line": 1,
+              "offset": 0
+            }
+          },
+          "selector": "a"
+        }
+      ],
+      "source": {
+        "end": {
+          "column": 1,
+          "line": 10,
+          "offset": 303
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0
+        }
+      }
+    },
+    "css": "a {\n  grid-template: \"a b\" 1fr \"c d\" 2fr / 1fr 2fr;\n  font: bold 12px/1.5 \"Helvetica Neue\", sans-serif;\n  transition: all .3s cubic-bezier(.25,.8,.25,1);\n  background: linear-gradient(to right, rgba(0,0,0,.5) 0%, #fff 100%);\n  content: \"a\\\"b\";\n  content: 'a\\'b';\n  width: calc(100% - (2 * var(--x)));\n}\n"
+  }
+}

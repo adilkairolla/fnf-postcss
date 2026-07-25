@@ -1,0 +1,4 @@
+:is(a, b) :where(.c, .d) { color: red }
+a:has(> img) { color: red }
+input::placeholder { color: red }
+li:nth-child(2n+1 of .x) { color: red }

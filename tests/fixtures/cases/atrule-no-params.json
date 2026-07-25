@@ -1,0 +1,45 @@
+{
+  "raws": {
+    "semicolon": false,
+    "after": ""
+  },
+  "type": "root",
+  "nodes": [
+    {
+      "raws": {
+        "before": "",
+        "between": "",
+        "afterName": "",
+        "after": " "
+      },
+      "type": "atrule",
+      "name": "page",
+      "source": {
+        "end": {
+          "column": 8,
+          "line": 1,
+          "offset": 8
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0
+        }
+      },
+      "params": "",
+      "nodes": []
+    }
+  ],
+  "source": {
+    "end": {
+      "column": 9,
+      "line": 1,
+      "offset": 8
+    },
+    "start": {
+      "column": 1,
+      "line": 1,
+      "offset": 0
+    }
+  }
+}

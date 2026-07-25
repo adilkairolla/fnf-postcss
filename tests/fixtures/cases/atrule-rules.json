@@ -1,0 +1,234 @@
+{
+  "raws": {
+    "semicolon": false,
+    "after": ""
+  },
+  "type": "root",
+  "nodes": [
+    {
+      "raws": {
+        "before": "",
+        "between": " ",
+        "afterName": " ",
+        "semicolon": false,
+        "after": "\n"
+      },
+      "type": "atrule",
+      "name": "supports",
+      "source": {
+        "end": {
+          "column": 1,
+          "line": 10,
+          "offset": 170
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0
+        }
+      },
+      "params": "(animation-name: test)",
+      "nodes": [
+        {
+          "raws": {
+            "before": "\n    ",
+            "between": " ",
+            "afterName": " ",
+            "semicolon": false,
+            "after": "\n    "
+          },
+          "type": "atrule",
+          "name": "-custom-keyframe",
+          "source": {
+            "end": {
+              "column": 5,
+              "line": 9,
+              "offset": 168
+            },
+            "start": {
+              "column": 5,
+              "line": 2,
+              "offset": 39
+            }
+          },
+          "params": "anim",
+          "nodes": [
+            {
+              "raws": {
+                "before": "\n        ",
+                "between": " ",
+                "semicolon": true,
+                "after": "\n        "
+              },
+              "type": "rule",
+              "nodes": [
+                {
+                  "raws": {
+                    "before": "\n            ",
+                    "between": ": "
+                  },
+                  "type": "decl",
+                  "source": {
+                    "end": {
+                      "column": 25,
+                      "line": 4,
+                      "offset": 104
+                    },
+                    "start": {
+                      "column": 13,
+                      "line": 4,
+                      "offset": 91
+                    }
+                  },
+                  "prop": "color",
+                  "value": "black"
+                }
+              ],
+              "source": {
+                "end": {
+                  "column": 9,
+                  "line": 5,
+                  "offset": 114
+                },
+                "start": {
+                  "column": 9,
+                  "line": 3,
+                  "offset": 72
+                }
+              },
+              "selector": "from"
+            },
+            {
+              "raws": {
+                "before": "\n        ",
+                "between": " ",
+                "semicolon": false,
+                "after": "\n        "
+              },
+              "type": "rule",
+              "nodes": [
+                {
+                  "raws": {
+                    "before": "\n            ",
+                    "between": ": "
+                  },
+                  "type": "decl",
+                  "source": {
+                    "end": {
+                      "column": 24,
+                      "line": 7,
+                      "offset": 152
+                    },
+                    "start": {
+                      "column": 13,
+                      "line": 7,
+                      "offset": 140
+                    }
+                  },
+                  "prop": "color",
+                  "value": "white"
+                }
+              ],
+              "source": {
+                "end": {
+                  "column": 9,
+                  "line": 8,
+                  "offset": 162
+                },
+                "start": {
+                  "column": 9,
+                  "line": 6,
+                  "offset": 123
+                }
+              },
+              "selector": "to"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "raws": {
+        "before": "\n\n",
+        "between": " ",
+        "afterName": " ",
+        "semicolon": false,
+        "after": "\n"
+      },
+      "type": "atrule",
+      "name": "support",
+      "source": {
+        "end": {
+          "column": 1,
+          "line": 16,
+          "offset": 257
+        },
+        "start": {
+          "column": 1,
+          "line": 12,
+          "offset": 172
+        }
+      },
+      "params": "selector(:focus-visible)",
+      "nodes": [
+        {
+          "raws": {
+            "before": "\n  ",
+            "between": " ",
+            "semicolon": true,
+            "after": "\n  "
+          },
+          "type": "rule",
+          "nodes": [
+            {
+              "raws": {
+                "before": "\n    ",
+                "between": ": "
+              },
+              "type": "decl",
+              "source": {
+                "end": {
+                  "column": 23,
+                  "line": 14,
+                  "offset": 251
+                },
+                "start": {
+                  "column": 5,
+                  "line": 14,
+                  "offset": 232
+                }
+              },
+              "prop": "background",
+              "value": "yellow"
+            }
+          ],
+          "source": {
+            "end": {
+              "column": 3,
+              "line": 15,
+              "offset": 255
+            },
+            "start": {
+              "column": 3,
+              "line": 13,
+              "offset": 210
+            }
+          },
+          "selector": "a:focus-visible"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "end": {
+      "column": 2,
+      "line": 16,
+      "offset": 257
+    },
+    "start": {
+      "column": 1,
+      "line": 1,
+      "offset": 0
+    }
+  }
+}

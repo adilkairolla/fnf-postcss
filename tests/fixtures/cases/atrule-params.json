@@ -1,0 +1,45 @@
+{
+  "raws": {
+    "semicolon": false,
+    "after": ""
+  },
+  "type": "root",
+  "nodes": [
+    {
+      "raws": {
+        "before": "",
+        "between": " /* a */ ",
+        "afterName": "/* near */ /* filter */ ",
+        "after": ""
+      },
+      "type": "atrule",
+      "name": "-moz-document",
+      "source": {
+        "end": {
+          "column": 69,
+          "line": 1,
+          "offset": 69
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0
+        }
+      },
+      "params": "url(\"example.com/{\")",
+      "nodes": []
+    }
+  ],
+  "source": {
+    "end": {
+      "column": 70,
+      "line": 1,
+      "offset": 69
+    },
+    "start": {
+      "column": 1,
+      "line": 1,
+      "offset": 0
+    }
+  }
+}

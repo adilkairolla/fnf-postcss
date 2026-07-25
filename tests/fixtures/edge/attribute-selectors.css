@@ -1,0 +1,5 @@
+a[href] {}
+a[href="x"] {}
+a[href='x' i] {}
+a[href~="x{}"] {}
+a[data-a="]"] {}

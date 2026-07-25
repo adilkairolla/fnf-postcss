@@ -1,0 +1,370 @@
+{
+  "raws": {
+    "semicolon": false,
+    "after": ""
+  },
+  "type": "root",
+  "nodes": [
+    {
+      "raws": {
+        "before": "",
+        "left": " ",
+        "right": " "
+      },
+      "type": "comment",
+      "source": {
+        "end": {
+          "column": 24,
+          "line": 1,
+          "offset": 24
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0
+        }
+      },
+      "text": "a { color: black }"
+    },
+    {
+      "raws": {
+        "before": "\n",
+        "left": "",
+        "right": ""
+      },
+      "type": "comment",
+      "source": {
+        "end": {
+          "column": 4,
+          "line": 2,
+          "offset": 29
+        },
+        "start": {
+          "column": 1,
+          "line": 2,
+          "offset": 25
+        }
+      },
+      "text": ""
+    },
+    {
+      "raws": {
+        "before": "\n",
+        "left": " ",
+        "right": ""
+      },
+      "type": "comment",
+      "source": {
+        "end": {
+          "column": 5,
+          "line": 3,
+          "offset": 35
+        },
+        "start": {
+          "column": 1,
+          "line": 3,
+          "offset": 30
+        }
+      },
+      "text": ""
+    },
+    {
+      "raws": {
+        "before": "\n",
+        "between": " ",
+        "semicolon": false,
+        "after": "\n"
+      },
+      "type": "rule",
+      "nodes": [
+        {
+          "raws": {
+            "before": "\n    ",
+            "left": " ",
+            "right": " "
+          },
+          "type": "comment",
+          "source": {
+            "end": {
+              "column": 16,
+              "line": 5,
+              "offset": 58
+            },
+            "start": {
+              "column": 5,
+              "line": 5,
+              "offset": 46
+            }
+          },
+          "text": "inside"
+        },
+        {
+          "raws": {
+            "before": "\n    ",
+            "between": ": "
+          },
+          "type": "decl",
+          "source": {
+            "end": {
+              "column": 17,
+              "line": 6,
+              "offset": 76
+            },
+            "start": {
+              "column": 5,
+              "line": 6,
+              "offset": 63
+            }
+          },
+          "prop": "color",
+          "value": "black"
+        },
+        {
+          "raws": {
+            "before": "\n    ",
+            "left": " ",
+            "right": " "
+          },
+          "type": "comment",
+          "source": {
+            "end": {
+              "column": 17,
+              "line": 7,
+              "offset": 94
+            },
+            "start": {
+              "column": 5,
+              "line": 7,
+              "offset": 81
+            }
+          },
+          "text": "between"
+        },
+        {
+          "raws": {
+            "before": "\n    ",
+            "between": ": "
+          },
+          "type": "decl",
+          "source": {
+            "end": {
+              "column": 28,
+              "line": 8,
+              "offset": 123
+            },
+            "start": {
+              "column": 5,
+              "line": 8,
+              "offset": 99
+            }
+          },
+          "prop": "border-radius",
+          "value": "3px / 7px"
+        },
+        {
+          "raws": {
+            "before": "\n    ",
+            "left": " ",
+            "right": " "
+          },
+          "type": "comment",
+          "source": {
+            "end": {
+              "column": 13,
+              "line": 9,
+              "offset": 137
+            },
+            "start": {
+              "column": 5,
+              "line": 9,
+              "offset": 128
+            }
+          },
+          "text": "end"
+        }
+      ],
+      "source": {
+        "end": {
+          "column": 1,
+          "line": 10,
+          "offset": 139
+        },
+        "start": {
+          "column": 1,
+          "line": 4,
+          "offset": 36
+        }
+      },
+      "selector": "div"
+    },
+    {
+      "raws": {
+        "before": "\n",
+        "left": " ",
+        "right": " "
+      },
+      "type": "comment",
+      "source": {
+        "end": {
+          "column": 7,
+          "line": 11,
+          "offset": 147
+        },
+        "start": {
+          "column": 1,
+          "line": 11,
+          "offset": 140
+        }
+      },
+      "text": "b"
+    },
+    {
+      "raws": {
+        "before": "\n\n",
+        "between": " ",
+        "semicolon": true,
+        "after": "\n"
+      },
+      "type": "rule",
+      "nodes": [
+        {
+          "raws": {
+            "before": "\n    ",
+            "between": ": "
+          },
+          "type": "decl",
+          "source": {
+            "end": {
+              "column": 17,
+              "line": 14,
+              "offset": 170
+            },
+            "start": {
+              "column": 5,
+              "line": 14,
+              "offset": 157
+            }
+          },
+          "prop": "color",
+          "value": "black"
+        },
+        {
+          "raws": {
+            "before": "\n    ",
+            "left": " ",
+            "right": " "
+          },
+          "type": "comment",
+          "source": {
+            "end": {
+              "column": 11,
+              "line": 15,
+              "offset": 182
+            },
+            "start": {
+              "column": 5,
+              "line": 15,
+              "offset": 175
+            }
+          },
+          "text": "c"
+        }
+      ],
+      "source": {
+        "end": {
+          "column": 1,
+          "line": 16,
+          "offset": 184
+        },
+        "start": {
+          "column": 1,
+          "line": 13,
+          "offset": 149
+        }
+      },
+      "selector": "a"
+    },
+    {
+      "raws": {
+        "before": "\n\n",
+        "between": " ",
+        "semicolon": true,
+        "after": "\n"
+      },
+      "type": "rule",
+      "nodes": [
+        {
+          "raws": {
+            "before": "\n  ",
+            "between": ": "
+          },
+          "type": "decl",
+          "source": {
+            "end": {
+              "column": 27,
+              "line": 19,
+              "offset": 227
+            },
+            "start": {
+              "column": 3,
+              "line": 19,
+              "offset": 202
+            }
+          },
+          "prop": "color",
+          "value": "var/**/(--broken)"
+        },
+        {
+          "raws": {
+            "before": "\n  ",
+            "between": ": ",
+            "value": {
+              "raw": "sans-serif,/**/serif",
+              "value": "sans-serif,serif"
+            }
+          },
+          "type": "decl",
+          "source": {
+            "end": {
+              "column": 36,
+              "line": 20,
+              "offset": 264
+            },
+            "start": {
+              "column": 3,
+              "line": 20,
+              "offset": 230
+            }
+          },
+          "prop": "font-family",
+          "value": "sans-serif,serif"
+        }
+      ],
+      "source": {
+        "end": {
+          "column": 1,
+          "line": 21,
+          "offset": 266
+        },
+        "start": {
+          "column": 1,
+          "line": 18,
+          "offset": 186
+        }
+      },
+      "selector": ".in/**/side"
+    }
+  ],
+  "source": {
+    "end": {
+      "column": 2,
+      "line": 21,
+      "offset": 266
+    },
+    "start": {
+      "column": 1,
+      "line": 1,
+      "offset": 0
+    }
+  }
+}

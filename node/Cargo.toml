@@ -1,0 +1,25 @@
+[package]
+name = "fnf-postcss-node"
+version = "0.1.0"
+edition = "2021"
+# napi-build uses the `cargo::` build-script syntax, which needs 1.77.
+rust-version = "1.77"
+description = "Node.js bindings for fnf-postcss"
+license = "MIT"
+repository = "https://github.com/adilkairolla/fnf-postcss"
+publish = false
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+postcss = { path = "..", package = "fnf-postcss" }
+# `serde-json` lets a `serde_json::Value` cross the boundary as real JS objects,
+# so the AST never becomes a JSON string on either side.
+napi = { version = "2", default-features = false, features = ["napi4", "serde-json"] }
+napi-derive = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = { version = "1", features = ["preserve_order"] }
+
+[build-dependencies]
+napi-build = "2"

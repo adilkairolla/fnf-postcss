@@ -1,0 +1,69 @@
+{
+  "raws": {
+    "semicolon": false,
+    "after": ""
+  },
+  "type": "root",
+  "nodes": [
+    {
+      "raws": {
+        "before": "",
+        "between": " ",
+        "selector": {
+          "raw": "a/* { } */ b",
+          "value": "a b"
+        },
+        "after": ""
+      },
+      "type": "rule",
+      "nodes": [],
+      "source": {
+        "end": {
+          "column": 15,
+          "line": 1,
+          "offset": 15
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0
+        }
+      },
+      "selector": "a b"
+    },
+    {
+      "raws": {
+        "before": "\n\n",
+        "between": " ",
+        "after": ""
+      },
+      "type": "rule",
+      "nodes": [],
+      "source": {
+        "end": {
+          "column": 15,
+          "line": 3,
+          "offset": 32
+        },
+        "start": {
+          "column": 1,
+          "line": 3,
+          "offset": 17
+        }
+      },
+      "selector": "a/* test */b"
+    }
+  ],
+  "source": {
+    "end": {
+      "column": 16,
+      "line": 3,
+      "offset": 32
+    },
+    "start": {
+      "column": 1,
+      "line": 1,
+      "offset": 0
+    }
+  }
+}

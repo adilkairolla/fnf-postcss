@@ -1,0 +1,6 @@
+a {
+  *zoom: 1;
+  _height: 1px;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff');
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient()";
+}

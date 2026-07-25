@@ -1,0 +1,134 @@
+{
+  "raws": {
+    "semicolon": false,
+    "after": ""
+  },
+  "type": "root",
+  "nodes": [
+    {
+      "raws": {
+        "before": "",
+        "between": " ",
+        "semicolon": false,
+        "after": "\n"
+      },
+      "type": "rule",
+      "nodes": [
+        {
+          "raws": {
+            "before": "\n    ",
+            "between": ": "
+          },
+          "type": "decl",
+          "source": {
+            "end": {
+              "column": 16,
+              "line": 2,
+              "offset": 20
+            },
+            "start": {
+              "column": 5,
+              "line": 2,
+              "offset": 8
+            }
+          },
+          "prop": "width",
+          "value": "10px"
+        },
+        {
+          "raws": {
+            "before": "\n    ",
+            "between": ": "
+          },
+          "type": "decl",
+          "source": {
+            "end": {
+              "column": 21,
+              "line": 3,
+              "offset": 42
+            },
+            "start": {
+              "column": 5,
+              "line": 3,
+              "offset": 25
+            }
+          },
+          "prop": "margin",
+          "value": "0 @width"
+        },
+        {
+          "raws": {
+            "before": "\n    ",
+            "between": " ",
+            "afterName": " ",
+            "semicolon": true,
+            "after": "\n    "
+          },
+          "type": "atrule",
+          "name": "mixin",
+          "source": {
+            "end": {
+              "column": 5,
+              "line": 6,
+              "offset": 91
+            },
+            "start": {
+              "column": 5,
+              "line": 4,
+              "offset": 47
+            }
+          },
+          "params": "mobile",
+          "nodes": [
+            {
+              "raws": {
+                "before": "\n        ",
+                "between": ": "
+              },
+              "type": "decl",
+              "source": {
+                "end": {
+                  "column": 22,
+                  "line": 5,
+                  "offset": 85
+                },
+                "start": {
+                  "column": 9,
+                  "line": 5,
+                  "offset": 71
+                }
+              },
+              "prop": "height",
+              "value": "100px"
+            }
+          ]
+        }
+      ],
+      "source": {
+        "end": {
+          "column": 1,
+          "line": 7,
+          "offset": 93
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0
+        }
+      },
+      "selector": "a"
+    }
+  ],
+  "source": {
+    "end": {
+      "column": 2,
+      "line": 7,
+      "offset": 93
+    },
+    "start": {
+      "column": 1,
+      "line": 1,
+      "offset": 0
+    }
+  }
+}

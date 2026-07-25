@@ -1,0 +1,7 @@
+a { background: url(foo.png) }
+b { background: url( foo.png ) }
+c { background: url('foo.png') }
+d { background: url("foo.png") }
+e { background: url(data:image/svg+xml;base64,PHN2Zz48L3N2Zz4=) }
+f { background: url(foo\)bar.png) }
+g { background: url(a(b) }

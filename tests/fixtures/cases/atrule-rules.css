@@ -1,0 +1,16 @@
+@supports (animation-name: test) {
+    @-custom-keyframe anim {
+        from {
+            color: black;
+        }
+        to {
+            color: white
+        }
+    }
+}
+
+@support selector(:focus-visible) {
+  a:focus-visible {
+    background: yellow;
+  }
+}

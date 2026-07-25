@@ -1,0 +1,30 @@
+[package]
+name = "fnf-postcss"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.74"
+description = "A tool for transforming CSS with plugins — a Rust port of PostCSS"
+license = "MIT"
+repository = "https://github.com/adilkairolla/fnf-postcss"
+keywords = ["css", "parser", "postcss", "ast", "sourcemap"]
+categories = ["parser-implementations", "web-programming"]
+exclude = ["/tools", "/node", "/.github"]
+
+# The crate is `postcss` to code that uses it; the package name only has to be
+# unique on crates.io.
+[lib]
+name = "postcss"
+path = "src/lib.rs"
+
+[workspace]
+members = ["node"]
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = { version = "1", features = ["preserve_order"] }
+
+[dev-dependencies]
+
+[profile.release]
+lto = true
+codegen-units = 1

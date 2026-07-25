@@ -1,0 +1,43 @@
+{
+  "raws": {
+    "semicolon": true,
+    "after": ""
+  },
+  "type": "root",
+  "nodes": [
+    {
+      "raws": {
+        "before": "",
+        "between": "",
+        "afterName": " "
+      },
+      "type": "atrule",
+      "name": "charset",
+      "source": {
+        "end": {
+          "column": 17,
+          "line": 1,
+          "offset": 17
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0
+        }
+      },
+      "params": "\"UTF-8\""
+    }
+  ],
+  "source": {
+    "end": {
+      "column": 18,
+      "line": 1,
+      "offset": 17
+    },
+    "start": {
+      "column": 1,
+      "line": 1,
+      "offset": 0
+    }
+  }
+}

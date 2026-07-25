@@ -1,0 +1,9 @@
+a {
+  a: 1!important;
+  b: 2 ! important;
+  c: 3 !IMPORTANT;
+  d: 4 !/*x*/important;
+  e: 5 /*x*/ !important;
+  f: 6 important;
+  g: 7 !importantx;
+}

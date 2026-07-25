@@ -1,0 +1,8 @@
+:root {
+  --empty: ;
+  --js: { color: red };
+  --nested: { a: { b: c } };
+  --semi: a;b;
+  --trailing-space:   ;
+  --quote: "}";
+}

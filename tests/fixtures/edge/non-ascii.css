@@ -1,0 +1,4 @@
+/* héllo → wörld */
+.класс { content: "日本語"; }
+.emoji-\1F600 { content: "😀 x"; }
+a::after { content: "→" }

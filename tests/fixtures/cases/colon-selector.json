@@ -1,0 +1,43 @@
+{
+  "raws": {
+    "semicolon": false,
+    "after": ""
+  },
+  "type": "root",
+  "nodes": [
+    {
+      "raws": {
+        "before": "",
+        "between": " ",
+        "after": ""
+      },
+      "type": "rule",
+      "nodes": [],
+      "source": {
+        "end": {
+          "column": 14,
+          "line": 1,
+          "offset": 14
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0
+        }
+      },
+      "selector": ":fullscreen"
+    }
+  ],
+  "source": {
+    "end": {
+      "column": 15,
+      "line": 1,
+      "offset": 14
+    },
+    "start": {
+      "column": 1,
+      "line": 1,
+      "offset": 0
+    }
+  }
+}

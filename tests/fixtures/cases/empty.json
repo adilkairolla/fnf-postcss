@@ -1,0 +1,19 @@
+{
+  "raws": {
+    "after": ""
+  },
+  "type": "root",
+  "nodes": [],
+  "source": {
+    "end": {
+      "column": 1,
+      "line": 1,
+      "offset": 0
+    },
+    "start": {
+      "column": 1,
+      "line": 1,
+      "offset": 0
+    }
+  }
+}

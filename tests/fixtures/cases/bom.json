@@ -1,0 +1,43 @@
+{
+  "raws": {
+    "semicolon": false,
+    "after": ""
+  },
+  "type": "root",
+  "nodes": [
+    {
+      "raws": {
+        "before": "",
+        "between": "",
+        "after": ""
+      },
+      "type": "rule",
+      "nodes": [],
+      "source": {
+        "end": {
+          "column": 3,
+          "line": 1,
+          "offset": 3
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0
+        }
+      },
+      "selector": "a"
+    }
+  ],
+  "source": {
+    "end": {
+      "column": 4,
+      "line": 1,
+      "offset": 3
+    },
+    "start": {
+      "column": 1,
+      "line": 1,
+      "offset": 0
+    }
+  }
+}

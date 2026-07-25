@@ -1,0 +1,9 @@
+{
+  "name": "postcss-rs-tools",
+  "private": true,
+  "type": "module",
+  "description": "Differential testing against the JS PostCSS implementation",
+  "dependencies": {
+    "postcss": "^8.5.23"
+  }
+}

@@ -1,0 +1,1 @@
+a:hover, a::before, a:not(:first-child) { color: red }

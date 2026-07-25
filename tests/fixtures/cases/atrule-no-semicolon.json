@@ -1,0 +1,86 @@
+{
+  "raws": {
+    "semicolon": false,
+    "after": ""
+  },
+  "type": "root",
+  "nodes": [
+    {
+      "raws": {
+        "before": "",
+        "between": " ",
+        "afterName": " ",
+        "semicolon": false,
+        "after": ""
+      },
+      "type": "atrule",
+      "name": "media",
+      "source": {
+        "end": {
+          "column": 24,
+          "line": 1,
+          "offset": 24
+        },
+        "start": {
+          "column": 1,
+          "line": 1,
+          "offset": 0
+        }
+      },
+      "params": "screen",
+      "nodes": [
+        {
+          "raws": {
+            "before": "",
+            "between": "",
+            "afterName": ""
+          },
+          "type": "atrule",
+          "name": "content",
+          "source": {
+            "start": {
+              "column": 16,
+              "line": 1,
+              "offset": 15
+            }
+          },
+          "params": ""
+        }
+      ]
+    },
+    {
+      "raws": {
+        "before": "\n\n",
+        "between": "",
+        "afterName": " "
+      },
+      "type": "atrule",
+      "name": "charset",
+      "source": {
+        "end": {
+          "column": 16,
+          "line": 3,
+          "offset": 42
+        },
+        "start": {
+          "column": 1,
+          "line": 3,
+          "offset": 26
+        }
+      },
+      "params": "\"UTF-8\""
+    }
+  ],
+  "source": {
+    "end": {
+      "column": 17,
+      "line": 3,
+      "offset": 42
+    },
+    "start": {
+      "column": 1,
+      "line": 1,
+      "offset": 0
+    }
+  }
+}
