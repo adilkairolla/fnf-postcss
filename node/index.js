@@ -21,9 +21,13 @@ function libc() {
 }
 
 function candidates() {
+  // On Linux the libc flavour is part of the name; everywhere else the two
+  // spellings coincide, so drop the duplicate.
   let flavour = libc()
-  let triple = [platform, arch, flavour].filter(Boolean).join('-')
-  return [triple, [platform, arch].filter(Boolean).join('-')]
+  let names = [[platform, arch, flavour].filter(Boolean).join('-')]
+  let bare = `${platform}-${arch}`
+  if (!names.includes(bare)) names.push(bare)
+  return names
 }
 
 let loaded

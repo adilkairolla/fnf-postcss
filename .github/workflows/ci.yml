@@ -49,11 +49,9 @@ jobs:
           node-version: 22
       - run: npm install
         working-directory: tools
-      - run: cargo build --release -p fnf-postcss-node
-      - name: Put the addon where the loader looks for it
-        run: cp target/release/libfnf_postcss_node.so node/fnf-postcss.linux-x64-gnu.node
+      - name: Build the native addon
+        run: node scripts/build.mjs
+        working-directory: node
       # Runs real plugins through both implementations and compares CSS, maps
       # and warnings byte for byte.
       - run: node node/test/drop-in.mjs tests/fixtures/cases tests/fixtures/edge
-        env:
-          NODE_PATH: tools/node_modules

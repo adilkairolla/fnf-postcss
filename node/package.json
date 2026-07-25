@@ -41,22 +41,10 @@
   "files": [
     "index.js",
     "lib",
+    "scripts/build.mjs",
     "LICENSE",
     "README.md"
   ],
-  "napi": {
-    "binaryName": "fnf-postcss",
-    "targets": [
-      "aarch64-apple-darwin",
-      "x86_64-apple-darwin",
-      "x86_64-unknown-linux-gnu",
-      "aarch64-unknown-linux-gnu",
-      "x86_64-unknown-linux-musl",
-      "aarch64-unknown-linux-musl",
-      "x86_64-pc-windows-msvc",
-      "aarch64-pc-windows-msvc"
-    ]
-  },
   "optionalDependencies": {
     "@fnf-postcss/darwin-arm64": "0.1.0",
     "@fnf-postcss/darwin-x64": "0.1.0",
@@ -67,15 +55,10 @@
     "@fnf-postcss/win32-arm64-msvc": "0.1.0",
     "@fnf-postcss/win32-x64-msvc": "0.1.0"
   },
-  "devDependencies": {
-    "@napi-rs/cli": "^2.18.4"
-  },
   "scripts": {
-    "artifacts": "napi artifacts",
-    "build": "napi build --platform --release --cargo-cwd .. --cargo-name fnf-postcss-node",
-    "build:debug": "napi build --platform --cargo-cwd .. --cargo-name fnf-postcss-node",
-    "prepublishOnly": "napi prepublish -t npm --skip-gh-release",
-    "test": "node test/drop-in.mjs ../tests/fixtures/cases ../tests/fixtures/edge",
-    "version": "napi version"
+    "build": "node scripts/build.mjs",
+    "build:debug": "node scripts/build.mjs --debug",
+    "platform-packages": "node scripts/platform-packages.mjs",
+    "test": "node test/drop-in.mjs ../tests/fixtures/cases ../tests/fixtures/edge"
   }
 }
