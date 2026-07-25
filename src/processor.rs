@@ -195,11 +195,7 @@ impl Processor {
     ///
     /// A node a plugin modifies is marked dirty again and revisited, so plugins
     /// see each other's output. A tree that never settles is an error, as in JS.
-    fn run_visitors(
-        &self,
-        tree: &mut Tree,
-        ctx: &mut PluginContext,
-    ) -> Result<(), CssSyntaxError> {
+    fn run_visitors(&self, tree: &mut Tree, ctx: &mut PluginContext) -> Result<(), CssSyntaxError> {
         if self.plugins.is_empty() {
             return Ok(());
         }

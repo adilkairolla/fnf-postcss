@@ -509,7 +509,11 @@ impl Tree {
         let source = other.arena[id.0].clone();
         let mut data = NodeData::new(source.kind.clone());
         data.raws = source.raws.clone();
-        data.source = if clear_source { None } else { source.source.clone() };
+        data.source = if clear_source {
+            None
+        } else {
+            source.source.clone()
+        };
         data.nodes = source.nodes.as_ref().map(|_| Vec::new());
         let new_id = self.alloc(data);
 
@@ -893,18 +897,17 @@ impl Tree {
                 let other_root = other.root();
                 // A root appended to anything but a document contributes its
                 // children; a document adopts the root itself.
-                let nodes = if other.arena[other_root.0].kind == NodeKind::Root
-                    && !parent_is_document
-                {
-                    other
-                        .children(other_root)
-                        .to_vec()
-                        .into_iter()
-                        .map(|child| (self.adopt(&other, child, false), false))
-                        .collect()
-                } else {
-                    vec![(self.adopt(&other, other_root, false), false)]
-                };
+                let nodes =
+                    if other.arena[other_root.0].kind == NodeKind::Root && !parent_is_document {
+                        other
+                            .children(other_root)
+                            .to_vec()
+                            .into_iter()
+                            .map(|child| (self.adopt(&other, child, false), false))
+                            .collect()
+                    } else {
+                        vec![(self.adopt(&other, other_root, false), false)]
+                    };
                 Ok((nodes, true))
             }
             Insertable::Many(items) => {
@@ -1323,7 +1326,9 @@ impl Tree {
                     return;
                 }
             }
-            let Some(value) = tree.value(decl) else { return };
+            let Some(value) = tree.value(decl) else {
+                return;
+            };
             if !value.contains(pattern) {
                 return;
             }

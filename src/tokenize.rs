@@ -185,7 +185,10 @@ impl<'a> Tokenizer<'a> {
     ///
     /// `ignore_unclosed` suppresses unclosed-construct errors for this token
     /// only, like the `{ ignoreUnclosed: true }` option in PostCSS.
-    pub fn next_token(&mut self, ignore_unclosed: bool) -> Result<Option<Token<'a>>, CssSyntaxError> {
+    pub fn next_token(
+        &mut self,
+        ignore_unclosed: bool,
+    ) -> Result<Option<Token<'a>>, CssSyntaxError> {
         if let Some(token) = self.returned.pop() {
             return Ok(Some(token));
         }
@@ -568,7 +571,8 @@ impl<'a> Tokenizer<'a> {
     }
 
     fn unclosed(&self, what: &str) -> CssSyntaxError {
-        self.input.error_at_offset(format!("Unclosed {}", what), self.pos)
+        self.input
+            .error_at_offset(format!("Unclosed {}", what), self.pos)
     }
 }
 

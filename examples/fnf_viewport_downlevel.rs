@@ -126,7 +126,12 @@ fn downlevel(value: &str) -> Option<String> {
         return None;
     }
 
-    let is_separator = |byte: u8| matches!(byte, b' ' | b'\t' | b'\n' | b'\r' | b'\x0c' | b',' | b'/' | b'(' | b')' | b'\'' | b'"');
+    let is_separator = |byte: u8| {
+        matches!(
+            byte,
+            b' ' | b'\t' | b'\n' | b'\r' | b'\x0c' | b',' | b'/' | b'(' | b')' | b'\'' | b'"'
+        )
+    };
 
     let mut out = String::with_capacity(value.len());
     let mut changed = false;

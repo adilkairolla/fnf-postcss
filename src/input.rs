@@ -323,8 +323,7 @@ impl Input {
         let from_column = from.column?;
 
         let to = end.and_then(|(end_line, end_column)| {
-            let position =
-                consumer.original_position_for(end_line, end_column.saturating_sub(1));
+            let position = consumer.original_position_for(end_line, end_column.saturating_sub(1));
             // A map need not cover the end position; treat a miss as if no end
             // had been requested, so the pair stays consistent.
             position.source.is_some().then_some(position)
@@ -555,7 +554,7 @@ mod tests {
         for index in 0..2000 {
             css.push_str("a{content:\"");
             match index % 3 {
-                0 => css.push('é'),   // 2 bytes
+                0 => css.push('é'), // 2 bytes
                 1 => css.push('☃'), // 3 bytes
                 _ => css.push('𝄞'), // 4 bytes
             }

@@ -387,7 +387,10 @@ impl NewNode {
 
     /// Marks a declaration `!important`.
     pub fn important(mut self, important: bool) -> Self {
-        if let NodeKind::Decl { important: flag, .. } = &mut self.kind {
+        if let NodeKind::Decl {
+            important: flag, ..
+        } = &mut self.kind
+        {
             *flag = important;
         }
         self

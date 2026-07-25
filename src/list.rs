@@ -108,7 +108,10 @@ mod tests {
 
     #[test]
     fn ignores_unclosed_parens() {
-        assert_eq!(space("border-radius: 10px / 20px"), vec!["border-radius:", "10px", "/", "20px"]);
+        assert_eq!(
+            space("border-radius: 10px / 20px"),
+            vec!["border-radius:", "10px", "/", "20px"]
+        );
         assert_eq!(comma("a, b)"), vec!["a", "b)"]);
     }
 }

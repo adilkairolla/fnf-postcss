@@ -22,7 +22,10 @@ fn is_safe_comment_neighbor(kind: Option<TokenKind>) -> bool {
 }
 
 fn find_last_with_position(tokens: &[Token<'_>]) -> Option<usize> {
-    tokens.iter().rev().find_map(|token| token.truthy_position())
+    tokens
+        .iter()
+        .rev()
+        .find_map(|token| token.truthy_position())
 }
 
 fn tokens_to_string(tokens: &[Token<'_>], from: usize, to: usize) -> String {
@@ -401,7 +404,12 @@ impl<'a> Parser<'a> {
         value_tokens.extend(tokens.iter().copied());
         self.raw(node, "value", &value_tokens, custom_property);
 
-        if self.tree.value(node).is_some_and(|value| value.contains(':')) && !custom_property {
+        if self
+            .tree
+            .value(node)
+            .is_some_and(|value| value.contains(':'))
+            && !custom_property
+        {
             self.check_missed_semicolon(&tokens)?;
         }
 
@@ -496,7 +504,12 @@ impl<'a> Parser<'a> {
         self.semicolon = false;
 
         let spaces = std::mem::take(&mut self.spaces);
-        let after = self.tree.raws(self.current).after.clone().unwrap_or_default();
+        let after = self
+            .tree
+            .raws(self.current)
+            .after
+            .clone()
+            .unwrap_or_default();
         self.tree.raws_mut(self.current).after = Some(format!("{}{}", after, spaces));
 
         match self.tree.parent(self.current) {
@@ -519,7 +532,12 @@ impl<'a> Parser<'a> {
             self.tree.raws_mut(self.current).semicolon = Some(self.semicolon);
         }
         let spaces = std::mem::take(&mut self.spaces);
-        let after = self.tree.raws(self.current).after.clone().unwrap_or_default();
+        let after = self
+            .tree
+            .raws(self.current)
+            .after
+            .clone()
+            .unwrap_or_default();
         self.tree.raws_mut(self.current).after = Some(format!("{}{}", after, spaces));
 
         let end = self.get_position(self.tokenizer.position());
@@ -606,7 +624,11 @@ impl<'a> Parser<'a> {
             if token.kind == TokenKind::Space && i == length - 1 && !custom_property {
                 clean = false;
             } else if token.kind == TokenKind::Comment {
-                let prev = if i == 0 { None } else { Some(tokens[i - 1].kind) };
+                let prev = if i == 0 {
+                    None
+                } else {
+                    Some(tokens[i - 1].kind)
+                };
                 let next = tokens.get(i + 1).map(|token| token.kind);
                 if !is_safe_comment_neighbor(prev) && !is_safe_comment_neighbor(next) {
                     if value.ends_with(',') {
@@ -663,8 +685,7 @@ impl<'a> Parser<'a> {
                     // `progid:DXImageTransform...` is one IE value, not a
                     // property and a value.
                     Some(prev_token)
-                        if prev_token.kind == TokenKind::Word
-                            && prev_token.content == "progid" =>
+                        if prev_token.kind == TokenKind::Word && prev_token.content == "progid" =>
                     {
                         continue;
                     }

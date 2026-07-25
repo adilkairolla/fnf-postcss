@@ -290,11 +290,8 @@ fn append_appends_child() {
 fn append_appends_multiple_children() {
     let mut tree = parse("a { a: 1 }").unwrap();
     let rule = first_rule(&tree);
-    tree.append(
-        rule,
-        vec![NewNode::decl("b", "2"), NewNode::decl("c", "3")],
-    )
-    .unwrap();
+    tree.append(rule, vec![NewNode::decl("b", "2"), NewNode::decl("c", "3")])
+        .unwrap();
 
     assert_eq!(tree.to_css(), "a { a: 1; b: 2; c: 3 }");
 }
@@ -304,7 +301,8 @@ fn append_has_rule_at_rule_and_comment_shortcuts() {
     let mut tree = Tree::new();
     let root = tree.root();
     tree.append(root, NewNode::rule("a")).unwrap();
-    tree.append(root, NewNode::at_rule("media", "screen")).unwrap();
+    tree.append(root, NewNode::at_rule("media", "screen"))
+        .unwrap();
     tree.append(root, NewNode::comment("c")).unwrap();
 
     assert_eq!(tree.to_css(), "a {}\n@media screen;\n/* c */");
@@ -383,11 +381,8 @@ fn prepend_prepends_child() {
 fn prepend_prepends_multiple_children() {
     let mut tree = parse("a { a: 1 }").unwrap();
     let rule = first_rule(&tree);
-    tree.prepend(
-        rule,
-        vec![NewNode::decl("b", "2"), NewNode::decl("c", "3")],
-    )
-    .unwrap();
+    tree.prepend(rule, vec![NewNode::decl("b", "2"), NewNode::decl("c", "3")])
+        .unwrap();
 
     assert_eq!(tree.to_css(), "a { b: 2; c: 3; a: 1 }");
 }
@@ -559,11 +554,9 @@ fn first_and_last_work_for_children_less_nodes() {
 fn children_can_be_sorted() {
     let mut tree = parse("a{b:1;c:2;a:3}").unwrap();
     let rule = first_rule(&tree);
-    tree.sort_children(rule, |tree, a, b| {
-        match (tree.prop(a), tree.prop(b)) {
-            (Some(a), Some(b)) => a.cmp(b),
-            _ => Ordering::Equal,
-        }
+    tree.sort_children(rule, |tree, a, b| match (tree.prop(a), tree.prop(b)) {
+        (Some(a), Some(b)) => a.cmp(b),
+        _ => Ordering::Equal,
     });
     assert_eq!(props(&tree, rule), ["a", "b", "c"]);
 }
@@ -572,7 +565,8 @@ fn children_can_be_sorted() {
 fn does_not_normalize_new_children_with_existing_before() {
     let mut tree = parse("a { a: 1; b: 2 }").unwrap();
     let rule = first_rule(&tree);
-    tree.append(rule, NewNode::decl("c", "3").before("\n ")).unwrap();
+    tree.append(rule, NewNode::decl("c", "3").before("\n "))
+        .unwrap();
     assert_eq!(tree.node_to_css(rule), "a { a: 1; b: 2;\n c: 3 }");
 }
 
@@ -580,7 +574,8 @@ fn does_not_normalize_new_children_with_existing_before() {
 fn keeps_an_explicit_before_when_appending_to_a_root() {
     let mut tree = parse("a {}\n\nb {}").unwrap();
     let root = tree.root();
-    tree.append(root, NewNode::rule("c").before("\n\n\n")).unwrap();
+    tree.append(root, NewNode::rule("c").before("\n\n\n"))
+        .unwrap();
     let last = tree.last(root).unwrap();
     assert_eq!(tree.raws(last).before.as_deref(), Some("\n\n\n"));
 }
@@ -602,7 +597,8 @@ fn replace_with_inserts_new_node() {
     let mut tree = parse("a{one:1;two:2}").unwrap();
     let rule = first_rule(&tree);
     let decl = tree.first(rule).unwrap();
-    tree.replace_with(decl, NewNode::decl("three", "3")).unwrap();
+    tree.replace_with(decl, NewNode::decl("three", "3"))
+        .unwrap();
 
     assert_eq!(tree.to_css(), "a{three:3;two:2}");
     assert_eq!(tree.parent(decl), None);
@@ -780,8 +776,14 @@ fn position_by_returns_position() {
     let rule = first_rule(&tree);
     let decl = tree.first(rule).unwrap();
 
-    assert_eq!(at(tree.position_by(decl, &NodeErrorOptions::default())), (1, 6, 5));
-    assert_eq!(at(tree.position_by(rule, &NodeErrorOptions::default())), (1, 1, 0));
+    assert_eq!(
+        at(tree.position_by(decl, &NodeErrorOptions::default())),
+        (1, 6, 5)
+    );
+    assert_eq!(
+        at(tree.position_by(rule, &NodeErrorOptions::default())),
+        (1, 1, 0)
+    );
 }
 
 #[test]
@@ -812,13 +814,25 @@ fn position_by_returns_position_after_ast_mutations() {
     let one = tree.first(rule).unwrap();
     let two = tree.next(one).unwrap();
 
-    assert_eq!(at(tree.position_by(rule, &NodeErrorOptions::default())), (1, 1, 0));
-    assert_eq!(at(tree.position_by(two, &NodeErrorOptions::default())), (3, 2, 14));
+    assert_eq!(
+        at(tree.position_by(rule, &NodeErrorOptions::default())),
+        (1, 1, 0)
+    );
+    assert_eq!(
+        at(tree.position_by(two, &NodeErrorOptions::default())),
+        (3, 2, 14)
+    );
 
     tree.remove(one);
 
-    assert_eq!(at(tree.position_by(rule, &NodeErrorOptions::default())), (1, 1, 0));
-    assert_eq!(at(tree.position_by(two, &NodeErrorOptions::default())), (3, 2, 14));
+    assert_eq!(
+        at(tree.position_by(rule, &NodeErrorOptions::default())),
+        (1, 1, 0)
+    );
+    assert_eq!(
+        at(tree.position_by(two, &NodeErrorOptions::default())),
+        (3, 2, 14)
+    );
 }
 
 #[test]

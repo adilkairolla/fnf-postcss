@@ -1,0 +1,81 @@
+{
+  "name": "fnf-postcss",
+  "version": "0.1.0",
+  "description": "PostCSS with a Rust core: same API and plugins, parsing and source maps in native code",
+  "keywords": [
+    "css",
+    "postcss",
+    "parser",
+    "sourcemap",
+    "rust",
+    "napi"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adilkairolla/fnf-postcss.git",
+    "directory": "node"
+  },
+  "homepage": "https://github.com/adilkairolla/fnf-postcss#readme",
+  "bugs": "https://github.com/adilkairolla/fnf-postcss/issues",
+  "author": "Adil Kairolla",
+  "main": "./lib/postcss.js",
+  "types": "./lib/postcss.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./lib/postcss.d.mts",
+        "default": "./lib/postcss.mjs"
+      },
+      "require": {
+        "types": "./lib/postcss.d.ts",
+        "default": "./lib/postcss.js"
+      }
+    },
+    "./native": "./index.js",
+    "./package.json": "./package.json"
+  },
+  "engines": {
+    "node": "^14 || ^16 || >=18"
+  },
+  "files": [
+    "index.js",
+    "lib",
+    "LICENSE",
+    "README.md"
+  ],
+  "napi": {
+    "binaryName": "fnf-postcss",
+    "targets": [
+      "aarch64-apple-darwin",
+      "x86_64-apple-darwin",
+      "x86_64-unknown-linux-gnu",
+      "aarch64-unknown-linux-gnu",
+      "x86_64-unknown-linux-musl",
+      "aarch64-unknown-linux-musl",
+      "x86_64-pc-windows-msvc",
+      "aarch64-pc-windows-msvc"
+    ]
+  },
+  "optionalDependencies": {
+    "@fnf-postcss/darwin-arm64": "0.1.0",
+    "@fnf-postcss/darwin-x64": "0.1.0",
+    "@fnf-postcss/linux-arm64-gnu": "0.1.0",
+    "@fnf-postcss/linux-arm64-musl": "0.1.0",
+    "@fnf-postcss/linux-x64-gnu": "0.1.0",
+    "@fnf-postcss/linux-x64-musl": "0.1.0",
+    "@fnf-postcss/win32-arm64-msvc": "0.1.0",
+    "@fnf-postcss/win32-x64-msvc": "0.1.0"
+  },
+  "devDependencies": {
+    "@napi-rs/cli": "^2.18.4"
+  },
+  "scripts": {
+    "artifacts": "napi artifacts",
+    "build": "napi build --platform --release --cargo-cwd .. --cargo-name fnf-postcss-node",
+    "build:debug": "napi build --platform --cargo-cwd .. --cargo-name fnf-postcss-node",
+    "prepublishOnly": "napi prepublish -t npm --skip-gh-release",
+    "test": "node test/drop-in.mjs ../tests/fixtures/cases ../tests/fixtures/edge",
+    "version": "napi version"
+  }
+}

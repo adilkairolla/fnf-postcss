@@ -158,7 +158,12 @@ fn round_trips_through_json() {
 
         let value = json::to_json(&tree);
         let rebuilt = json::from_json(&value).unwrap_or_else(|e| panic!("{}: {}", name, e));
-        assert_eq!(rebuilt.to_css(), css, "{}: JSON round-trip changed the CSS", name);
+        assert_eq!(
+            rebuilt.to_css(),
+            css,
+            "{}: JSON round-trip changed the CSS",
+            name
+        );
         assert_eq!(
             json::to_json(&rebuilt),
             value,

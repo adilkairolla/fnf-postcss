@@ -185,9 +185,10 @@ impl SourceMapConsumer {
         generator.source_root = self.source_root.clone();
 
         for mapping in &self.mappings {
-            let source = mapping.source.and_then(|i| self.raw_sources.get(i)).map(|s| {
-                compute_source_url(self.source_root.as_deref(), s)
-            });
+            let source = mapping
+                .source
+                .and_then(|i| self.raw_sources.get(i))
+                .map(|s| compute_source_url(self.source_root.as_deref(), s));
             generator.add_mapping(GeneratedMapping {
                 generated_line: mapping.generated_line,
                 generated_column: mapping.generated_column,
@@ -436,11 +437,11 @@ impl SourceMapGenerator {
             previous_generated_column = mapping.generated_column as i64;
 
             if let Some(source) = &mapping.source {
-                let source_index = self
-                    .sources
-                    .iter()
-                    .position(|s| s == source)
-                    .expect("source was registered by add_mapping") as i64;
+                let source_index =
+                    self.sources
+                        .iter()
+                        .position(|s| s == source)
+                        .expect("source was registered by add_mapping") as i64;
                 encode_vlq(source_index - previous_source, &mut out);
                 previous_source = source_index;
 
@@ -459,7 +460,8 @@ impl SourceMapGenerator {
                         .names
                         .iter()
                         .position(|n| n == name)
-                        .expect("name was registered by add_mapping") as i64;
+                        .expect("name was registered by add_mapping")
+                        as i64;
                     encode_vlq(name_index - previous_name, &mut out);
                     previous_name = name_index;
                 }

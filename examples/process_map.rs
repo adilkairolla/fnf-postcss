@@ -67,10 +67,7 @@ fn main() {
                 .map
                 .as_ref()
                 .map(|map| serde_json::to_value(map.to_raw()).expect("serializable"));
-            println!(
-                "{}",
-                json!({ "css": result.css, "map": map })
-            );
+            println!("{}", json!({ "css": result.css, "map": map }));
         }
         Err(error) => println!("{}", json!({ "error": error.reason })),
     }

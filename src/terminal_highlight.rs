@@ -14,7 +14,10 @@ pub fn is_color_supported() -> bool {
     if std::env::var_os("FORCE_COLOR").is_some() {
         return true;
     }
-    if std::env::var("TERM").map(|term| term == "dumb").unwrap_or(false) {
+    if std::env::var("TERM")
+        .map(|term| term == "dumb")
+        .unwrap_or(false)
+    {
         return false;
     }
     is_terminal()

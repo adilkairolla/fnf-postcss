@@ -255,8 +255,7 @@ fn removing_a_node_stops_further_visits_of_it() {
             _decl: NodeId,
             _ctx: &mut PluginContext,
         ) -> Result<(), CssSyntaxError> {
-            self.seen
-                .fetch_add(1, std::sync::atomic::Ordering::Relaxed);
+            self.seen.fetch_add(1, std::sync::atomic::Ordering::Relaxed);
             Ok(())
         }
     }
@@ -467,19 +466,44 @@ fn visits_every_node_type() {
         fn name(&self) -> &str {
             "all"
         }
-        fn root(&self, _t: &mut Tree, _n: NodeId, _c: &mut PluginContext) -> Result<(), CssSyntaxError> {
+        fn root(
+            &self,
+            _t: &mut Tree,
+            _n: NodeId,
+            _c: &mut PluginContext,
+        ) -> Result<(), CssSyntaxError> {
             self.note("root")
         }
-        fn rule(&self, _t: &mut Tree, _n: NodeId, _c: &mut PluginContext) -> Result<(), CssSyntaxError> {
+        fn rule(
+            &self,
+            _t: &mut Tree,
+            _n: NodeId,
+            _c: &mut PluginContext,
+        ) -> Result<(), CssSyntaxError> {
             self.note("rule")
         }
-        fn at_rule(&self, _t: &mut Tree, _n: NodeId, _c: &mut PluginContext) -> Result<(), CssSyntaxError> {
+        fn at_rule(
+            &self,
+            _t: &mut Tree,
+            _n: NodeId,
+            _c: &mut PluginContext,
+        ) -> Result<(), CssSyntaxError> {
             self.note("atrule")
         }
-        fn decl(&self, _t: &mut Tree, _n: NodeId, _c: &mut PluginContext) -> Result<(), CssSyntaxError> {
+        fn decl(
+            &self,
+            _t: &mut Tree,
+            _n: NodeId,
+            _c: &mut PluginContext,
+        ) -> Result<(), CssSyntaxError> {
             self.note("decl")
         }
-        fn comment(&self, _t: &mut Tree, _n: NodeId, _c: &mut PluginContext) -> Result<(), CssSyntaxError> {
+        fn comment(
+            &self,
+            _t: &mut Tree,
+            _n: NodeId,
+            _c: &mut PluginContext,
+        ) -> Result<(), CssSyntaxError> {
             self.note("comment")
         }
     }

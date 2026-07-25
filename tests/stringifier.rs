@@ -135,7 +135,9 @@ fn clones_style() {
     let mut spaces = parse("@page {\n  a {\n  }\n}").unwrap();
     let page = spaces.first(spaces.root()).unwrap();
     let rule = spaces.first(page).unwrap();
-    spaces.append(rule, NewNode::decl("color", "black")).unwrap();
+    spaces
+        .append(rule, NewNode::decl("color", "black"))
+        .unwrap();
     assert_eq!(spaces.to_css(), "@page {\n  a {\n    color: black\n  }\n}");
 }
 
@@ -280,7 +282,8 @@ fn clones_only_spaces_in_before() {
     let root = tree.root();
     let rule = tree.first(root).unwrap();
     tree.append(rule, NewNode::decl("two", "2")).unwrap();
-    tree.append(root, NewNode::at_rule("keyframes", "a")).unwrap();
+    tree.append(root, NewNode::at_rule("keyframes", "a"))
+        .unwrap();
     let last = tree.last(root).unwrap();
     tree.append(last, NewNode::rule("from")).unwrap();
 
@@ -422,7 +425,8 @@ fn escapes_style_and_comment_open_with_css_escape() {
     let mut tree = Tree::new();
     let root = tree.root();
     tree.append(root, NewNode::rule("</style>")).unwrap();
-    tree.append(root, NewNode::at_rule("media", "<style>")).unwrap();
+    tree.append(root, NewNode::at_rule("media", "<style>"))
+        .unwrap();
     tree.append(root, NewNode::comment("</style><!--<style>"))
         .unwrap();
 
@@ -430,7 +434,8 @@ fn escapes_style_and_comment_open_with_css_escape() {
     rule.raws.before = Some("\n</style>".into());
     rule.raws.after = Some("</style>".into());
     let rule = tree.create(rule);
-    tree.append(rule, NewNode::decl("color", "</style>")).unwrap();
+    tree.append(rule, NewNode::decl("color", "</style>"))
+        .unwrap();
     tree.append(root, rule).unwrap();
 
     assert_eq!(

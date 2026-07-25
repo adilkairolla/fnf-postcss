@@ -66,7 +66,10 @@ fn to_js_error(error: postcss::CssSyntaxError) -> Error {
         "source".into(),
         error.source.map_or(Value::Null, Value::String),
     );
-    payload.insert("plugin".into(), error.plugin.map_or(Value::Null, Value::String));
+    payload.insert(
+        "plugin".into(),
+        error.plugin.map_or(Value::Null, Value::String),
+    );
     payload.insert("line".into(), number_or_null(error.line));
     payload.insert("column".into(), number_or_null(error.column));
     payload.insert("endLine".into(), number_or_null(error.end_line));
@@ -149,6 +152,54 @@ pub fn stringify(ast: Value) -> Result<String> {
     Ok(postcss::stringify_tree(&tree))
 }
 
+/// Stringifies an AST and generates its source map together.
+///
+/// Map generation has to walk the tree recording where every node landed, which
+/// is the same walk stringifying does — so the two happen in one pass here,
+/// rather than the JS side asking twice.
+#[napi]
+pub fn stringify_with_map(ast: Value, opts: Option<JsOptions>) -> Result<ProcessOutput> {
+    let mut tree = json::from_json(&ast).map_err(Error::from_reason)?;
+    let options = ProcessOptions {
+        from: opts.as_ref().and_then(|opts| opts.from.clone()),
+        to: opts.as_ref().and_then(|opts| opts.to.clone()),
+        map: opts.as_ref().and_then(map_setting),
+        ..Default::default()
+    };
+    let (css, map) = postcss::map_generator::MapGenerator::generate(&mut tree, &options);
+    Ok(ProcessOutput {
+        css,
+        map: map.map(|map| map.to_json_string()),
+    })
+}
+
+/// Tokenizes CSS, for the error-snippet highlighting on the JS side.
+///
+/// Each token is `[type, content, start, end]`, with the positions omitted when
+/// the tokenizer does not record them — the shape `tokenize.js` produces.
+#[napi]
+pub fn tokenize(css: String) -> Vec<Vec<Value>> {
+    let input = postcss::Input::from_css(css);
+    let mut tokenizer = postcss::Tokenizer::new(&input, postcss::TokenizerOptions::default());
+    let mut tokens = Vec::new();
+    // Highlighting is best-effort: broken CSS is exactly when it runs, so stop
+    // at the first token the tokenizer refuses rather than failing the error.
+    while let Ok(Some(token)) = tokenizer.next_token(false) {
+        let mut entry = vec![
+            Value::String(token.kind.as_str().to_string()),
+            Value::String(token.content.to_string()),
+        ];
+        if let Some(start) = token.start {
+            entry.push(Value::from(start));
+            if let Some(end) = token.end {
+                entry.push(Value::from(end));
+            }
+        }
+        tokens.push(entry);
+    }
+    tokens
+}
+
 /// Parses, stringifies and generates a source map in one call, for when no
 /// plugin needs to see the tree.
 #[napi]
@@ -159,12 +210,101 @@ pub fn process(css: String, opts: Option<JsOptions>) -> Result<ProcessOutput> {
         map: opts.as_ref().and_then(map_setting),
         ..Default::default()
     };
-    let result = Processor::new().process(css, options).map_err(to_js_error)?;
+    let result = Processor::new()
+        .process(css, options)
+        .map_err(to_js_error)?;
     let map = result.map_json();
     Ok(ProcessOutput {
         css: result.css,
         map,
     })
+}
+
+/// One entry of a source map, as `originalPositionFor` returns it.
+#[napi(object)]
+pub struct OriginalPosition {
+    /// The original file.
+    pub source: Option<String>,
+    /// 1-based line in the original file.
+    pub line: Option<u32>,
+    /// 0-based column in the original file.
+    pub column: Option<u32>,
+    /// Identifier name, when the map records one.
+    pub name: Option<String>,
+}
+
+/// Reads positions out of an existing source map.
+///
+/// Stands in for `source-map-js`'s `SourceMapConsumer` on the JS side, so the
+/// package needs no source-map dependency.
+#[napi]
+pub struct MapConsumer {
+    inner: postcss::source_map::SourceMapConsumer,
+}
+
+#[napi]
+impl MapConsumer {
+    /// Parses a map from its JSON text.
+    #[napi(constructor)]
+    pub fn new(text: String) -> Result<Self> {
+        let inner =
+            postcss::source_map::SourceMapConsumer::from_json(&text).map_err(Error::from_reason)?;
+        Ok(MapConsumer { inner })
+    }
+
+    /// The generated file the map describes.
+    #[napi(getter)]
+    pub fn file(&self) -> Option<String> {
+        self.inner.file.clone()
+    }
+
+    /// Prefix prepended to every source.
+    #[napi(getter)]
+    pub fn source_root(&self) -> Option<String> {
+        self.inner.source_root.clone()
+    }
+
+    /// Sources as written in the map, before `sourceRoot` is applied.
+    #[napi(getter)]
+    pub fn sources(&self) -> Vec<String> {
+        self.inner.raw_sources.clone()
+    }
+
+    /// The sources' text, when the map carries it.
+    #[napi(getter)]
+    pub fn sources_content(&self) -> Option<Vec<Option<String>>> {
+        self.inner.sources_content.clone()
+    }
+
+    /// Position in the original file that generated `line`/`column`.
+    ///
+    /// `line` is 1-based and `column` 0-based, as in `source-map-js`.
+    #[napi]
+    pub fn original_position_for(&self, line: u32, column: u32) -> OriginalPosition {
+        let found = self
+            .inner
+            .original_position_for(line as usize, column as usize);
+        OriginalPosition {
+            source: found.source,
+            line: found.line.map(|line| line as u32),
+            column: found.column.map(|column| column as u32),
+            name: found.name,
+        }
+    }
+
+    /// The text of one source, when the map carries it.
+    #[napi]
+    pub fn source_content_for(&self, source: String) -> Option<String> {
+        self.inner
+            .source_content_for(&source)
+            .map(|text| text.to_string())
+    }
+
+    /// The map back as JSON text, for `SourceMapGenerator.fromSourceMap`.
+    #[napi]
+    pub fn to_json_string(&self) -> String {
+        self.inner.to_generator().to_json_string()
+    }
 }
 
 /// Splits a CSS value on top-level commas.

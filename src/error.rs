@@ -269,5 +269,8 @@ fn last_chars(text: &str, count: usize) -> String {
 }
 
 fn char_slice(text: &str, from: usize, to: usize) -> String {
-    text.chars().skip(from).take(to.saturating_sub(from)).collect()
+    text.chars()
+        .skip(from)
+        .take(to.saturating_sub(from))
+        .collect()
 }

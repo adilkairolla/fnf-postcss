@@ -22,6 +22,28 @@ tree.walk_decls(|tree, decl| {
 assert_eq!(tree.to_css(), "a { color: green }");
 ```
 
+## Using it from Node
+
+[`node/`](node) is an npm package, `fnf-postcss`, that puts this core under
+PostCSS's own JS API so existing plugins run unchanged:
+
+```sh
+npm install fnf-postcss
+```
+
+```js
+const postcss = require('fnf-postcss')
+await postcss([autoprefixer]).process(css, { from, map: { inline: false }, to })
+```
+
+Rust does the parsing, source maps, stringifying and tokenizing; the node
+classes, walkers and plugin pipeline are PostCSS's own JS layer, vendored and
+attributed, so plugins see the object model they were written against. A real
+Tailwind v4 → nesting → preset-env pipeline over 293 files × 3 map modes produces
+byte-identical CSS, maps and warnings. See [node/README.md](node/README.md) for
+the honest performance picture — and read the note there about how much of a
+build this actually moves.
+
 ## What is here
 
 | Area | JS module | Rust module |

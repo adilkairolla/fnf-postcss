@@ -1,0 +1,120 @@
+name: Release
+
+# Builds the native addon for every supported platform, then publishes the main
+# package plus one `@fnf-postcss/<platform>` package per binary. npm installs
+# only the platform package matching the machine, via optionalDependencies.
+#
+# Trigger by pushing a tag (`v0.1.0`), or by hand from the Actions tab. A run
+# without NPM_TOKEN builds and uploads the artifacts but skips publishing, which
+# is a useful dry run.
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: ${{ matrix.target }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: macos-latest
+            target: aarch64-apple-darwin
+          - os: macos-latest
+            target: x86_64-apple-darwin
+          - os: ubuntu-latest
+            target: x86_64-unknown-linux-gnu
+          - os: ubuntu-latest
+            target: aarch64-unknown-linux-gnu
+            cross: true
+          - os: ubuntu-latest
+            target: x86_64-unknown-linux-musl
+            cross: true
+          - os: ubuntu-latest
+            target: aarch64-unknown-linux-musl
+            cross: true
+          - os: windows-latest
+            target: x86_64-pc-windows-msvc
+          - os: windows-latest
+            target: aarch64-pc-windows-msvc
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: ${{ matrix.target }}
+      - uses: Swatinem/rust-cache@v2
+        with:
+          key: ${{ matrix.target }}
+
+      - run: npm install
+        working-directory: node
+
+      # The musl and cross-compiled aarch64 targets need a linker the runner
+      # does not have; zigbuild supplies one for all of them.
+      - name: Install cargo-zigbuild
+        if: matrix.cross
+        run: |
+          pip install ziglang
+          cargo install --locked cargo-zigbuild
+
+      - name: Build
+        working-directory: node
+        run: npx napi build --platform --release --target ${{ matrix.target }} --cargo-cwd .. --cargo-name fnf-postcss-node ${{ matrix.cross && '--zig' || '' }}
+
+      - name: Smoke test the addon
+        if: ${{ !matrix.cross }}
+        working-directory: node
+        run: node -e "const p=require('./lib/postcss.js'); const css='a { color: red }'; if (p.parse(css).toString()!==css) throw new Error('round-trip failed'); console.log('ok', require('./index.js').coreVersion())"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: addon-${{ matrix.target }}
+          path: node/*.node
+          if-no-files-found: error
+
+  publish:
+    name: publish to npm
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: https://registry.npmjs.org
+      - run: npm install
+        working-directory: node
+
+      - uses: actions/download-artifact@v4
+        with:
+          path: node/artifacts
+
+      # Sorts the binaries into the per-platform package directories that
+      # `napi prepublish` expects.
+      - run: npx napi artifacts --dist npm
+        working-directory: node
+
+      - name: Publish
+        if: ${{ env.NODE_AUTH_TOKEN != '' }}
+        working-directory: node
+        run: |
+          npm config set provenance true
+          npx napi prepublish -t npm --skip-gh-release
+          npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Skipped publish
+        if: ${{ env.NODE_AUTH_TOKEN == '' }}
+        run: echo "No NPM_TOKEN set — built and packaged everything but did not publish."
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

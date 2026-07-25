@@ -73,7 +73,10 @@ fn matches_postcss_on_every_edge_case() {
                     failures.push(format!(
                         "{}: AST mismatch\n  expected: {}\n  actual:   {}",
                         name,
-                        expected.get("ast").map(|v| v.to_string()).unwrap_or_default(),
+                        expected
+                            .get("ast")
+                            .map(|v| v.to_string())
+                            .unwrap_or_default(),
                         actual
                     ));
                 }
@@ -83,7 +86,10 @@ fn matches_postcss_on_every_edge_case() {
                     failures.push(format!(
                         "{}: output mismatch\n  expected: {}\n  actual:   {}",
                         name,
-                        expected.get("css").map(|v| v.to_string()).unwrap_or_default(),
+                        expected
+                            .get("css")
+                            .map(|v| v.to_string())
+                            .unwrap_or_default(),
                         output
                     ));
                 }

@@ -289,10 +289,7 @@ fn raws_from_json(value: &Value, kind: &NodeKind) -> Raws {
 
 fn source_from_json(value: &Value, inputs: &[Arc<Input>]) -> Option<Source> {
     let object = value.as_object()?;
-    let input_id = object
-        .get("inputId")
-        .and_then(Value::as_u64)
-        .unwrap_or(0) as usize;
+    let input_id = object.get("inputId").and_then(Value::as_u64).unwrap_or(0) as usize;
     let input = inputs.get(input_id)?;
 
     Some(Source {

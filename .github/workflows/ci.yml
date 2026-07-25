@@ -1,0 +1,59 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  rust:
+    name: cargo test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: clippy, rustfmt
+      - uses: Swatinem/rust-cache@v2
+      - run: cargo fmt --check
+      - run: cargo clippy --all-targets -- -D warnings
+      - run: cargo test
+
+  differential:
+    name: differential vs the postcss package
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install
+        working-directory: tools
+      - run: cargo build --release --example ast_json --example process_map
+      # AST, raws, offsets, byte-exact round-trip, and error positions.
+      - run: node tools/diff-postcss.mjs tests/fixtures/cases tests/fixtures/edge
+      # Every source-map option combination.
+      - run: node tools/diff-maps.mjs
+
+  drop_in:
+    name: npm drop-in vs the postcss package
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install
+        working-directory: tools
+      - run: cargo build --release -p fnf-postcss-node
+      - name: Put the addon where the loader looks for it
+        run: cp target/release/libfnf_postcss_node.so node/fnf-postcss.linux-x64-gnu.node
+      # Runs real plugins through both implementations and compares CSS, maps
+      # and warnings byte for byte.
+      - run: node node/test/drop-in.mjs tests/fixtures/cases tests/fixtures/edge
+        env:
+          NODE_PATH: tools/node_modules

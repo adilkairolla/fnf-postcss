@@ -37,7 +37,11 @@ impl<'a> MapGenerator<'a> {
         tree: &mut Tree,
         opts: &'a ProcessOptions,
     ) -> (String, Option<SourceMapGenerator>) {
-        let map_opts = opts.map.as_ref().map(|map| map.options()).unwrap_or_default();
+        let map_opts = opts
+            .map
+            .as_ref()
+            .map(|map| map.options())
+            .unwrap_or_default();
 
         clear_annotation(tree, &map_opts);
 
@@ -213,9 +217,10 @@ impl<'a> MapGenerator<'a> {
             contents.push((url, input.css().to_string()));
         };
 
-        if let Some(source) = tree.source(tree.root()) {
-            record(&source.input);
-        }
+        // Only nodes, not the root itself — `setSourcesContent` walks children.
+        // For anything non-empty the root's input is a child's input too, so the
+        // difference shows up only in an empty file, where JS records no content
+        // at all and so omits `sourcesContent` from the map entirely.
         tree.walk_ref(tree.root(), |tree, node| {
             if let Some(source) = tree.source(node) {
                 record(&source.input);
@@ -268,7 +273,11 @@ impl<'a> MapGenerator<'a> {
             format!("{}.map", self.output_file())
         };
 
-        let eol = if self.css.contains("\r\n") { "\r\n" } else { "\n" };
+        let eol = if self.css.contains("\r\n") {
+            "\r\n"
+        } else {
+            "\n"
+        };
         self.css
             .push_str(&format!("{}/*# sourceMappingURL={} */", eol, content));
     }
@@ -282,9 +291,12 @@ impl<'a> MapGenerator<'a> {
             Some(_) => true,
             None => {
                 if !previous.is_empty() {
-                    previous
-                        .iter()
-                        .any(|input| input.map.as_ref().is_some_and(|map| map.annotation.is_some()))
+                    previous.iter().any(|input| {
+                        input
+                            .map
+                            .as_ref()
+                            .is_some_and(|map| map.annotation.is_some())
+                    })
                 } else {
                     true
                 }
@@ -384,10 +396,26 @@ fn to_url(path: &str) -> String {
             b'A'..=b'Z'
             | b'a'..=b'z'
             | b'0'..=b'9'
-            | b'-' | b'_' | b'.' | b'!' | b'~' | b'*' | b'\'' | b'(' | b')' | b';' | b'/'
-            | b':' | b'@' | b'&' | b'=' | b'+' | b'$' | b',' | b'[' | b']' => {
-                url.push(byte as char)
-            }
+            | b'-'
+            | b'_'
+            | b'.'
+            | b'!'
+            | b'~'
+            | b'*'
+            | b'\''
+            | b'('
+            | b')'
+            | b';'
+            | b'/'
+            | b':'
+            | b'@'
+            | b'&'
+            | b'='
+            | b'+'
+            | b'$'
+            | b','
+            | b'['
+            | b']' => url.push(byte as char),
             other => url.push_str(&format!("%{:02X}", other)),
         }
     }

@@ -95,8 +95,22 @@ fn default_raw(detect: &str) -> &'static str {
 fn is_at_name_end(character: char) -> bool {
     matches!(
         character,
-        '\t' | '\n' | '\u{c}' | '\r' | ' ' | '"' | '#' | '\'' | '(' | ')' | '/' | ';' | '[' | '\\'
-            | ']' | '{' | '}'
+        '\t' | '\n'
+            | '\u{c}'
+            | '\r'
+            | ' '
+            | '"'
+            | '#'
+            | '\''
+            | '('
+            | ')'
+            | '/'
+            | ';'
+            | '['
+            | '\\'
+            | ']'
+            | '{'
+            | '}'
     )
 }
 
@@ -489,7 +503,8 @@ impl<'t, 'b> Stringifier<'t, 'b> {
             match parent {
                 None => return String::new(),
                 Some(parent) => {
-                    if self.tree.type_name(parent) == "root" && self.tree.first(parent) == Some(id) {
+                    if self.tree.type_name(parent) == "root" && self.tree.first(parent) == Some(id)
+                    {
                         return String::new();
                     }
                     // `root` nodes in `document` should use only their own raws

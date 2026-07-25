@@ -5,9 +5,7 @@
 //! rather than this crate's. `tools/diff-maps.mjs` re-checks the whole option
 //! matrix against a live PostCSS.
 
-use postcss::{
-    Annotation, MapOptions, MapSetting, PrevMap, ProcessOptions, Processor,
-};
+use postcss::{Annotation, MapOptions, MapSetting, PrevMap, ProcessOptions, Processor};
 use serde_json::{json, Value};
 
 fn process(css: &str, opts: ProcessOptions) -> (String, Option<Value>) {
@@ -35,7 +33,10 @@ fn external(from: &str, to: &str) -> ProcessOptions {
 fn generates_an_external_map() {
     let (css, map) = process("a { color: black }\n", external("a.css", "b.css"));
 
-    assert_eq!(css, "a { color: black }\n\n/*# sourceMappingURL=b.css.map */");
+    assert_eq!(
+        css,
+        "a { color: black }\n\n/*# sourceMappingURL=b.css.map */"
+    );
     assert_eq!(
         map.unwrap(),
         json!({
@@ -279,7 +280,11 @@ fn refuses_map_files_outside_the_css_directory() {
     let dir = std::env::temp_dir().join(format!("postcss-rs-unsafe-{}", std::process::id()));
     let nested = dir.join("nested");
     std::fs::create_dir_all(&nested).unwrap();
-    std::fs::write(dir.join("outside.map"), "{\"version\":3,\"sources\":[],\"names\":[],\"mappings\":\"\"}").unwrap();
+    std::fs::write(
+        dir.join("outside.map"),
+        "{\"version\":3,\"sources\":[],\"names\":[],\"mappings\":\"\"}",
+    )
+    .unwrap();
 
     let css = "a{}\n/*# sourceMappingURL=../outside.map */";
     let css_path = nested.join("a.css");

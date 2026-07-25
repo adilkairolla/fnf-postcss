@@ -18,7 +18,10 @@ fn actual(token: Token<'_>) -> (String, String, Option<usize>, Option<usize>) {
     )
 }
 
-fn tokenize(css: &str, opts: TokenizerOptions) -> Vec<(String, String, Option<usize>, Option<usize>)> {
+fn tokenize(
+    css: &str,
+    opts: TokenizerOptions,
+) -> Vec<(String, String, Option<usize>, Option<usize>)> {
     let input = Input::from_css(css);
     let mut tokenizer = Tokenizer::new(&input, opts);
     let mut tokens = Vec::new();
@@ -91,7 +94,12 @@ fn changes_lines_in_spaces() {
 fn tokenizes_control_chars() {
     run(
         "{:;}",
-        &[c("{", "{", 0), c(":", ":", 1), c(";", ";", 2), c("}", "}", 3)],
+        &[
+            c("{", "{", 0),
+            c(":", ":", 1),
+            c(";", ";", 2),
+            c("}", "}", 3),
+        ],
     );
 }
 
@@ -176,10 +184,7 @@ fn tokenizes_escaped_string() {
 fn changes_lines_in_strings() {
     run(
         "\"\n\n\"\"\n\n\"",
-        &[
-            t("string", "\"\n\n\"", 0, 3),
-            t("string", "\"\n\n\"", 4, 7),
-        ],
+        &[t("string", "\"\n\n\"", 0, 3), t("string", "\"\n\n\"", 4, 7)],
     );
 }
 
@@ -272,7 +277,8 @@ fn supports_carriage_return() {
 
 #[test]
 fn tokenizes_css() {
-    let css = "a {\n  content: \"a\";\n  width: calc(1px;)\n  }\n/* small screen */\n@media screen {}";
+    let css =
+        "a {\n  content: \"a\";\n  width: calc(1px;)\n  }\n/* small screen */\n@media screen {}";
     run(
         css,
         &[
