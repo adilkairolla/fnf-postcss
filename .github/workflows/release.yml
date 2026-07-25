@@ -73,7 +73,15 @@ jobs:
       - name: Smoke test the addon
         if: ${{ !matrix.cross }}
         working-directory: node
-        run: node -e "const p=require('./lib/postcss.js'); const css='a { color: red }'; if (p.parse(css).toString()!==css) throw new Error('round-trip failed'); console.log('ok', require('./index.js').coreVersion())"
+        run: |
+          node -e "
+            const postcss = require('./lib/postcss.js')
+            const css = 'a { color: red }'
+            if (postcss.parse(css).toString() !== css) {
+              throw new Error('round-trip is not byte-exact')
+            }
+            console.log('ok, core', require('./index.js').coreVersion())
+          "
 
       - uses: actions/upload-artifact@v4
         with:
