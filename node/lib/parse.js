@@ -36,14 +36,23 @@ function rethrow(error, css, opts) {
   }
   if (!payload || !payload.__cssSyntaxError) throw error
 
+  // The constructor takes either two numbers (a start only) or two position
+  // objects (a range) — and ignores both unless *both* arguments are defined, so
+  // a start with no end has to be passed as numbers.
+  let start
+  let end
+  if (payload.line != null && payload.endLine != null) {
+    start = { column: payload.column, line: payload.line }
+    end = { column: payload.endColumn, line: payload.endLine }
+  } else if (payload.line != null) {
+    start = payload.line
+    end = payload.column
+  }
+
   let rebuilt = new CssSyntaxError(
     payload.reason,
-    payload.line == null
-      ? undefined
-      : { column: payload.column, line: payload.line },
-    payload.endLine == null
-      ? undefined
-      : { column: payload.endColumn, line: payload.endLine },
+    start,
+    end,
     payload.source ?? css,
     payload.file ?? (opts && opts.from),
     payload.plugin ?? undefined

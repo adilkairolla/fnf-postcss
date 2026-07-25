@@ -97,15 +97,24 @@ non-ASCII bytes — this cannot affect you.
 Not implemented: `opts.parser` / `opts.stringifier` / `opts.syntax`. A custom
 syntax means a different parser, which is the one thing this package replaces.
 
-## Native binaries
+`result.processor.version` reports `8.5.23`, the PostCSS version this tracks,
+because plugins read it to decide which API they are talking to. The package's
+own version is in `package.json`.
 
-Prebuilt for macOS (arm64, x64), Linux (arm64/x64, glibc and musl) and Windows
-(arm64, x64), installed automatically via `optionalDependencies`. On any other
-platform, build from source:
+## Native binary
+
+The package bundles one prebuilt addon, for **macOS arm64** (Apple silicon) —
+built and published from a developer machine rather than from CI, so that is the
+platform covered today. Anywhere else, compile one in place; it takes a few
+seconds and needs only a [Rust toolchain](https://rustup.rs):
 
 ```sh
-npm run build --prefix node_modules/fnf-postcss   # needs a Rust toolchain
+npm run build --prefix node_modules/fnf-postcss
 ```
+
+That writes the addon next to the loader under the same name it looks for, so
+nothing else needs configuring. `npm run smoke --prefix node_modules/fnf-postcss`
+then checks it parses, mutates, generates a map and reports errors correctly.
 
 The addon is also usable directly, without the JS layer:
 

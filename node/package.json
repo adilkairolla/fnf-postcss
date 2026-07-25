@@ -42,23 +42,16 @@
     "index.js",
     "lib",
     "scripts/build.mjs",
+    "test/smoke.mjs",
+    "fnf-postcss.*.node",
     "LICENSE",
     "README.md"
   ],
-  "optionalDependencies": {
-    "@fnf-postcss/darwin-arm64": "0.1.0",
-    "@fnf-postcss/darwin-x64": "0.1.0",
-    "@fnf-postcss/linux-arm64-gnu": "0.1.0",
-    "@fnf-postcss/linux-arm64-musl": "0.1.0",
-    "@fnf-postcss/linux-x64-gnu": "0.1.0",
-    "@fnf-postcss/linux-x64-musl": "0.1.0",
-    "@fnf-postcss/win32-arm64-msvc": "0.1.0",
-    "@fnf-postcss/win32-x64-msvc": "0.1.0"
-  },
   "scripts": {
     "build": "node scripts/build.mjs",
     "build:debug": "node scripts/build.mjs --debug",
-    "platform-packages": "node scripts/platform-packages.mjs",
+    "prepack": "node scripts/build.mjs && node test/smoke.mjs",
+    "smoke": "node test/smoke.mjs",
     "test": "node test/drop-in.mjs ../tests/fixtures/cases ../tests/fixtures/edge"
   }
 }

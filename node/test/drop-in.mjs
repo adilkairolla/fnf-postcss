@@ -132,17 +132,28 @@ for (const target of targets) {
       try {
         expected = await reference([...plugins]).process(css, opts)
       } catch (error) {
-        // Both must reject the same way.
+        // Both must reject the same way — including the position, which is what
+        // makes an error useful and is easy to drop when rebuilding one across a
+        // language boundary.
         try {
           await ours([...plugins]).process(css, opts).then(r => r.css)
           failed++
           console.log(`\x1b[31mFAIL\x1b[0m ${file} ${variant.name}: postcss threw, we did not`)
         } catch (mirrored) {
-          if (mirrored.reason !== error.reason) {
+          let shape = e =>
+            JSON.stringify({
+              column: e.column,
+              endColumn: e.endColumn,
+              endLine: e.endLine,
+              line: e.line,
+              name: e.name,
+              reason: e.reason
+            })
+          if (shape(mirrored) !== shape(error)) {
             failed++
             console.log(
-              `\x1b[31mFAIL\x1b[0m ${file} ${variant.name}: ` +
-                `reason "${mirrored.reason}" !== "${error.reason}"`
+              `\x1b[31mFAIL\x1b[0m ${file} ${variant.name}: error differs\n` +
+                `  postcss ${shape(error)}\n  ours    ${shape(mirrored)}`
             )
           }
         }
